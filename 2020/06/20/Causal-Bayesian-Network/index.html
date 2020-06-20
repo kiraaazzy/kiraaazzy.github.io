@@ -399,21 +399,95 @@
       <section class="article typo">
         <div class="article-entry" itemprop="articleBody">
           
-          <p>[TOC]</p>
-<h1 id="Bayesian-Network"><a href="#Bayesian-Network" class="headerlink" title="Bayesian Network"></a>Bayesian Network</h1><h2 id="贝叶斯定理"><a href="#贝叶斯定理" class="headerlink" title="贝叶斯定理"></a>贝叶斯定理</h2><p><img src="http://hellofromkira.oss-cn-beijing.aliyuncs.com/2020/06/21/15926372422123.jpg?x-oss-process=image/auto-orient,1/quality,q_90" alt="-w447"></p>
+          <!-- toc -->
+
+<ul>
+<li><a href="#bayesian-network">Bayesian Network</a><ul>
+<li><a href="#贝叶斯定理">贝叶斯定理</a></li>
+<li><a href="#引入贝叶斯网络的原因">引入贝叶斯网络的原因</a></li>
+<li><a href="#贝叶斯网络解决的问题">贝叶斯网络解决的问题</a></li>
+<li><a href="#贝叶斯网络的相关定义及特性">贝叶斯网络的相关定义及特性</a><ul>
+<li><a href="#markov-parents">Markov parents</a></li>
+<li><a href="#markov-compatibility">Markov Compatibility</a></li>
+<li><a href="#parental-markov-condition">Parental Markov Condition</a></li>
+<li><a href="#ordered-markov-condition">Ordered Markov Condition</a></li>
+<li><a href="#observational-equivalence">Observational Equivalence</a></li>
+<li><a href="#techniques-for-calculation">Techniques for calculation</a></li>
+<li><a href="#independency-in-bn">Independency in BN</a><ul>
+<li><a href="#local-independency">Local Independency</a></li>
+<li><a href="#global-independency">Global Independency</a><ul>
+<li><a href="#三种结构">三种结构</a><ul>
+<li><a href="#head-to-headcommon-evidence">head-to-head(Common Evidence)</a></li>
+<li><a href="#tail-to-tailcommon-causev-structure">tail-to-tail(Common Cause/V structure)</a></li>
+<li><a href="#head-to-tail">head-to-tail</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#d-separation">D-separation</a></li>
+</ul>
+</li>
+<li><a href="#贝叶斯网络的创建">贝叶斯网络的创建</a><ul>
+<li><a href="#生成贝叶斯网络初始顺序的重要性">生成贝叶斯网络初始顺序的重要性</a></li>
+<li><a href="#structure-learning">Structure Learning</a></li>
+<li><a href="#parameter-learning">Parameter learning</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#causal-bayesian-network">Causal Bayesian Network</a><ul>
+<li><a href="#实例">实例</a></li>
+<li><a href="#贝叶斯网络模型在causal-inference时的局限性">贝叶斯网络模型在Causal Inference时的局限性</a><ul>
+<li><a href="#马尔可夫等价类">马尔可夫等价类</a></li>
+</ul>
+</li>
+<li><a href="#the-philosophy-behind-caual-bayesian-networks">The philosophy behind caual Bayesian Networks</a></li>
+<li><a href="#causal-network的优越性">Causal network的优越性</a></li>
+<li><a href="#causal-bayesian-network和bayesian-network区别">Causal Bayesian network和Bayesian network区别</a></li>
+<li><a href="#definition-of-causal-bayesian-network">Definition of causal Bayesian network</a></li>
+<li><a href="#properties-of-causal-bayesian-network">Properties of Causal Bayesian network</a></li>
+<li><a href="#causal-relationship-and-their-stability">Causal relationship and their stability</a></li>
+<li><a href="#一些概念">一些概念</a><ul>
+<li><a href="#markov-blanket">Markov Blanket</a></li>
+<li><a href="#markov-process">Markov Process</a></li>
+<li><a href="#do操作符">do操作符</a></li>
+</ul>
+</li>
+<li><a href="#backdoor-criteria">Backdoor Criteria</a><ul>
+<li><a href="#什么是存在干扰">什么是存在干扰</a></li>
+<li><a href="#引入backdoor-criteria的原因">引入Backdoor Criteria的原因</a></li>
+<li><a href="#backdoor-path">Backdoor Path</a><ul>
+<li><a href="#两种backdoor-path结构">两种backdoor path结构</a></li>
+<li><a href="#unblocked-path-blocked-path">unblocked path / blocked path</a></li>
+<li><a href="#berksons-paradox">Berkson’s paradox</a></li>
+</ul>
+</li>
+<li><a href="#definition-of-backdoor-criterion">Definition of Backdoor criterion</a></li>
+<li><a href="#backdoor-criterion-and-ignorability">Backdoor criterion and Ignorability</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<!-- tocstop -->
+
+<p>[TOC]</p>
+<h1><span id="bayesian-network">Bayesian Network</span></h1><h2><span id="贝叶斯定理">贝叶斯定理</span></h2><p><img src="http://hellofromkira.oss-cn-beijing.aliyuncs.com/2020/06/21/15926372422123.jpg?x-oss-process=image/auto-orient,1/quality,q_90" alt="-w447"></p>
 <p><img src="http://hellofromkira.oss-cn-beijing.aliyuncs.com/2020/06/21/15926406771156.jpg?x-oss-process=image/auto-orient,1/quality,q_90" alt="-w636"><br>参考链接：<a href="https://www.zhihu.com/question/19725590/answer/217025594" target="_blank" rel="noopener">https://www.zhihu.com/question/19725590/answer/217025594</a></p>
-<h2 id="引入贝叶斯网络的原因"><a href="#引入贝叶斯网络的原因" class="headerlink" title="引入贝叶斯网络的原因"></a>引入贝叶斯网络的原因</h2><p>参考链接：<a href="https://zhuanlan.zhihu.com/p/33860572" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/33860572</a></p>
+<h2><span id="引入贝叶斯网络的原因">引入贝叶斯网络的原因</span></h2><p>参考链接：<a href="https://zhuanlan.zhihu.com/p/33860572" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/33860572</a></p>
 <blockquote>
 <p>用于简化随机变量的联合概率分布的表现</p>
 </blockquote>
 <p><img src="http://hellofromkira.oss-cn-beijing.aliyuncs.com/2020/06/21/15926377253815.jpg?x-oss-process=image/auto-orient,1/quality,q_90" alt="-w441"></p>
 <p>贝叶斯网络（以及其他所有的概率图模型）相比于原始的联合分布模型，最大的优势在于增加了变量之间条件独立的先验信息，从而<strong>减小了模型的体积</strong>，与模型进行推断、学习的时间。例如，上图共有5个变量，如果用朴素的联合分布模型建模，条件概率表格的体积将会是 48 ，而采用贝叶斯网络后，条件概率表格的总体积为17 。</p>
-<h2 id="贝叶斯网络解决的问题"><a href="#贝叶斯网络解决的问题" class="headerlink" title="贝叶斯网络解决的问题"></a>贝叶斯网络解决的问题</h2><ol>
+<h2><span id="贝叶斯网络解决的问题">贝叶斯网络解决的问题</span></h2><ol>
 <li>条件概率</li>
 <li>最大后验概率</li>
 </ol>
-<h2 id="贝叶斯网络的相关定义及特性"><a href="#贝叶斯网络的相关定义及特性" class="headerlink" title="贝叶斯网络的相关定义及特性"></a>贝叶斯网络的相关定义及特性</h2><p>参考：Causality——Judea Pearl 2nd edition</p>
-<h3 id="Markov-parents"><a href="#Markov-parents" class="headerlink" title="Markov parents"></a>Markov parents</h3><ol>
+<h2><span id="贝叶斯网络的相关定义及特性">贝叶斯网络的相关定义及特性</span></h2><p>参考：Causality——Judea Pearl 2nd edition</p>
+<h3><span id="markov-parents">Markov parents</span></h3><ol>
 <li><p>定义：</p>
 <p><img src="http://hellofromkira.oss-cn-beijing.aliyuncs.com/2020/06/21/15926378362656.jpg?x-oss-process=image/auto-orient,1/quality,q_90" alt="-w554"></p>
 <ul>
@@ -429,7 +503,7 @@
 </ol>
 </li>
 </ol>
-<h3 id="Markov-Compatibility"><a href="#Markov-Compatibility" class="headerlink" title="Markov Compatibility"></a>Markov Compatibility</h3><blockquote>
+<h3><span id="markov-compatibility">Markov Compatibility</span></h3><blockquote>
 <p> If a probability function $P$ admits the factorization of (1.33) relative to DAG $G$, we say that $G$ represents $P$, that $G$ and $P$ are compatible, or that <strong>$P$ is Markov relative to $G$</strong>.</p>
 </blockquote>
 <ul>
@@ -438,13 +512,13 @@
 <blockquote>
 <p>A convenient way of characterizing the set o f distributions compatible with a DAG G is to <strong>list the set of (conditional) independencies that each such distribution must sat­isfy</strong>. These independencies can be read off the DAG by using a graphical criterion called <strong>d-separation</strong></p>
 </blockquote>
-<h3 id="Parental-Markov-Condition"><a href="#Parental-Markov-Condition" class="headerlink" title="Parental Markov Condition"></a>Parental Markov Condition</h3><ol>
+<h3><span id="parental-markov-condition">Parental Markov Condition</span></h3><ol>
 <li>定义<ul>
 <li><img src="http://hellofromkira.oss-cn-beijing.aliyuncs.com/2020/06/21/15926679316940.jpg?x-oss-process=image/auto-orient,1/quality,q_90" alt="-w446"></li>
 </ul>
 </li>
 </ol>
-<h3 id="Ordered-Markov-Condition"><a href="#Ordered-Markov-Condition" class="headerlink" title="Ordered Markov Condition"></a>Ordered Markov Condition</h3><ol>
+<h3><span id="ordered-markov-condition">Ordered Markov Condition</span></h3><ol>
 <li>定义<ul>
 <li><img src="http://hellofromkira.oss-cn-beijing.aliyuncs.com/2020/06/21/15926683169335.jpg?x-oss-process=image/auto-orient,1/quality,q_90" alt="-w451"></li>
 </ul>
@@ -454,7 +528,7 @@
 </ul>
 </li>
 </ol>
-<h3 id="Observational-Equivalence"><a href="#Observational-Equivalence" class="headerlink" title="Observational Equivalence"></a>Observational Equivalence</h3><ol>
+<h3><span id="observational-equivalence">Observational Equivalence</span></h3><ol>
 <li>定义<ul>
 <li><img src="http://hellofromkira.oss-cn-beijing.aliyuncs.com/2020/06/21/15926700374377.jpg?x-oss-process=image/auto-orient,1/quality,q_90" alt="-w449"></li>
 </ul>
@@ -472,7 +546,7 @@
 <blockquote>
 <p>Thus, we see that some probability functions P (such as the one responsi­ ble for the construction of the Bayesian network in above pic), when unaccompanied by temporal information，can <strong>constrain the directionality of some arrows in the graph</strong>.</p>
 </blockquote>
-<h3 id="Techniques-for-calculation"><a href="#Techniques-for-calculation" class="headerlink" title="Techniques for calculation"></a>Techniques for calculation</h3><ol>
+<h3><span id="techniques-for-calculation">Techniques for calculation</span></h3><ol>
 <li>Message-passing architecture and Tree structure<ul>
 <li>join-tree propagation:  decompose the network into clusters then form tree structure, each clusters is a compound variable that is capable of passing mes­sages to its neighbors<ul>
 <li><img src="http://hellofromkira.oss-cn-beijing.aliyuncs.com/2020/06/21/15926702453659.jpg?x-oss-process=image/auto-orient,1/quality,q_90" alt="-w345"></li>
@@ -485,12 +559,12 @@
 </ul>
 </li>
 </ol>
-<h3 id="Independency-in-BN"><a href="#Independency-in-BN" class="headerlink" title="Independency in BN"></a>Independency in BN</h3><p><strong>如何判断a与b的independency</strong>: 假如a发生变化，a变化的影响是否会传达到b</p>
-<h4 id="Local-Independency"><a href="#Local-Independency" class="headerlink" title="Local Independency"></a>Local Independency</h4><blockquote>
+<h3><span id="independency-in-bn">Independency in BN</span></h3><p><strong>如何判断a与b的independency</strong>: 假如a发生变化，a变化的影响是否会传达到b</p>
+<h4><span id="local-independency">Local Independency</span></h4><blockquote>
 <p> Any variable in the network is independent of its non-descendents given its parents.<br>$$ (X \perp NonDesc(X) | Pa(X) $$where $ NonDesc(X) $ is the set of variables which are not descendents of $ X $ and $ Pa(X) $ is the set of variables which are parents of $ X $.</p>
 </blockquote>
-<h4 id="Global-Independency"><a href="#Global-Independency" class="headerlink" title="Global Independency"></a>Global Independency</h4><h5 id="三种结构"><a href="#三种结构" class="headerlink" title="三种结构"></a>三种结构</h5><p>参考链接：<a href="https://zhuanlan.zhihu.com/p/30139208" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/30139208</a></p>
-<h6 id="head-to-head-Common-Evidence"><a href="#head-to-head-Common-Evidence" class="headerlink" title="head-to-head(Common Evidence)"></a>head-to-head(Common Evidence)</h6><p><img src="http://hellofromkira.oss-cn-beijing.aliyuncs.com/2020/06/21/15926386359550.jpg?x-oss-process=image/auto-orient,1/quality,q_90" alt="-w248"></p>
+<h4><span id="global-independency">Global Independency</span></h4><h5><span id="三种结构">三种结构</span></h5><p>参考链接：<a href="https://zhuanlan.zhihu.com/p/30139208" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/30139208</a></p>
+<h6><span id="head-to-headcommon-evidence">head-to-head(Common Evidence)</span></h6><p><img src="http://hellofromkira.oss-cn-beijing.aliyuncs.com/2020/06/21/15926386359550.jpg?x-oss-process=image/auto-orient,1/quality,q_90" alt="-w248"></p>
 <ol>
 <li>c已知<ul>
 <li>a产生变化，c不变，那么b也要发生变化，因此a、b不独立</li>
@@ -507,7 +581,7 @@
 </ul>
 </li>
 </ol>
-<h6 id="tail-to-tail-Common-Cause-V-structure"><a href="#tail-to-tail-Common-Cause-V-structure" class="headerlink" title="tail-to-tail(Common Cause/V structure)"></a>tail-to-tail(Common Cause/V structure)</h6><p><img src="http://hellofromkira.oss-cn-beijing.aliyuncs.com/2020/06/21/15926389037966.jpg?x-oss-process=image/auto-orient,1/quality,q_90" alt="-w247"></p>
+<h6><span id="tail-to-tailcommon-causev-structure">tail-to-tail(Common Cause/V structure)</span></h6><p><img src="http://hellofromkira.oss-cn-beijing.aliyuncs.com/2020/06/21/15926389037966.jpg?x-oss-process=image/auto-orient,1/quality,q_90" alt="-w247"></p>
 <ol>
 <li>c已知<ul>
 <li>有：<ul>
@@ -523,7 +597,7 @@
 </ul>
 </li>
 </ol>
-<h6 id="head-to-tail"><a href="#head-to-tail" class="headerlink" title="head-to-tail"></a>head-to-tail</h6><p><img src="http://hellofromkira.oss-cn-beijing.aliyuncs.com/2020/06/21/15926391726520.jpg?x-oss-process=image/auto-orient,1/quality,q_90" alt="-w302"></p>
+<h6><span id="head-to-tail">head-to-tail</span></h6><p><img src="http://hellofromkira.oss-cn-beijing.aliyuncs.com/2020/06/21/15926391726520.jpg?x-oss-process=image/auto-orient,1/quality,q_90" alt="-w302"></p>
 <ol>
 <li>c已知<ul>
 <li>a的变化不会影响c，c的变化会影响b，因此a⊥b｜c</li>
@@ -541,7 +615,7 @@
 </li>
 <li>xi+1的分布状态只和xi有关，和其他变量条件独立，这种顺次演变的随机过程，就叫做<strong>马尔科夫链（Markov chain）</strong></li>
 </ol>
-<h3 id="D-separation"><a href="#D-separation" class="headerlink" title="D-separation"></a>D-separation</h3><p>为了回答<strong>给定一个随机变量的集合Z，随机变量A与B之间是否条件独立</strong>这个问题，我们需要引入d分隔的概念</p>
+<h3><span id="d-separation">D-separation</span></h3><p>为了回答<strong>给定一个随机变量的集合Z，随机变量A与B之间是否条件独立</strong>这个问题，我们需要引入d分隔的概念</p>
 <ul>
 <li><p>A、B间存在d分隔：某个节点集合C能d分隔节点A与节点B，当且仅当：给定C时，A与B之间<strong>不存在有效路径（active path/active trail）</strong>，即A、B被C隔断（blocked），A、B条件独立。</p>
 <ul>
@@ -558,10 +632,10 @@
 <ul>
 <li>粉色标记处：collider的子节点已知会使collider所在的path unlocked，即此时X会影响Y</li>
 </ul>
-<h2 id="贝叶斯网络的创建"><a href="#贝叶斯网络的创建" class="headerlink" title="贝叶斯网络的创建"></a>贝叶斯网络的创建</h2><h3 id="生成贝叶斯网络初始顺序的重要性"><a href="#生成贝叶斯网络初始顺序的重要性" class="headerlink" title="生成贝叶斯网络初始顺序的重要性"></a>生成贝叶斯网络初始顺序的重要性</h3><ul>
+<h2><span id="贝叶斯网络的创建">贝叶斯网络的创建</span></h2><h3><span id="生成贝叶斯网络初始顺序的重要性">生成贝叶斯网络初始顺序的重要性</span></h3><ul>
 <li>在构建贝叶斯网络的时候，会收到变量初始状态的影响<br><img src="http://hellofromkira.oss-cn-beijing.aliyuncs.com/2020/06/21/15926695528684.jpg?x-oss-process=image/auto-orient,1/quality,q_90" alt="-w457"></li>
 </ul>
-<h3 id="Structure-Learning"><a href="#Structure-Learning" class="headerlink" title="Structure Learning"></a>Structure Learning</h3><ol>
+<h3><span id="structure-learning">Structure Learning</span></h3><ol>
 <li><p>定义：</p>
 <blockquote>
 <p>The task of structure learning for Bayesian networks refers to <strong>learn the structure</strong> of the directed acyclic graph (DAG) <strong>from data</strong></p>
@@ -574,7 +648,7 @@
 </ul>
 </li>
 </ol>
-<h3 id="Parameter-learning"><a href="#Parameter-learning" class="headerlink" title="Parameter learning"></a>Parameter learning</h3><ol>
+<h3><span id="parameter-learning">Parameter learning</span></h3><ol>
 <li><p>定义 </p>
 <blockquote>
 <p>Parameter learning is the process of using data to <strong>learn the distributions</strong> of a Bayesian network or Dynamic Bayesian network.</p>
@@ -629,8 +703,8 @@
 </ol>
 </li>
 </ol>
-<h1 id="Causal-Bayesian-Network"><a href="#Causal-Bayesian-Network" class="headerlink" title="Causal Bayesian Network"></a>Causal Bayesian Network</h1><h2 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h2><p>肺癌分析实例： <a href="http://www.causality.inf.ethz.ch//data/LUCAS.html" target="_blank" rel="noopener">http://www.causality.inf.ethz.ch//data/LUCAS.html</a></p>
-<h2 id="贝叶斯网络模型在Causal-Inference时的局限性"><a href="#贝叶斯网络模型在Causal-Inference时的局限性" class="headerlink" title="贝叶斯网络模型在Causal Inference时的局限性"></a>贝叶斯网络模型在Causal Inference时的局限性</h2><p>局限性：贝叶斯网络本身<strong>无法区分出因果的方向</strong>。例如，A←B←C与A→B→C的因果方向完全相反，但在贝叶斯网络的模型描述下，它们<strong>表达的概率分布和条件独立假设完全相同</strong>。</p>
+<h1><span id="causal-bayesian-network">Causal Bayesian Network</span></h1><h2><span id="实例">实例</span></h2><p>肺癌分析实例： <a href="http://www.causality.inf.ethz.ch//data/LUCAS.html" target="_blank" rel="noopener">http://www.causality.inf.ethz.ch//data/LUCAS.html</a></p>
+<h2><span id="贝叶斯网络模型在causal-inference时的局限性">贝叶斯网络模型在Causal Inference时的局限性</span></h2><p>局限性：贝叶斯网络本身<strong>无法区分出因果的方向</strong>。例如，A←B←C与A→B→C的因果方向完全相反，但在贝叶斯网络的模型描述下，它们<strong>表达的概率分布和条件独立假设完全相同</strong>。</p>
 <ul>
 <li>贝叶斯网络中，A→B未必等同于A导致B</li>
 <li>概率论「给定/已知随机变量Z」里的「给定/已知」<strong>只能用于表达观察，而非介入</strong>（介入即产生激励/影响）。<ul>
@@ -639,11 +713,11 @@
 </ul>
 </li>
 </ul>
-<h3 id="马尔可夫等价类"><a href="#马尔可夫等价类" class="headerlink" title="马尔可夫等价类"></a>马尔可夫等价类</h3><p><img src="http://hellofromkira.oss-cn-beijing.aliyuncs.com/2020/06/21/15926397039859.jpg?x-oss-process=image/auto-orient,1/quality,q_90" alt="-w441"></p>
-<h2 id="The-philosophy-behind-caual-Bayesian-Networks"><a href="#The-philosophy-behind-caual-Bayesian-Networks" class="headerlink" title="The philosophy behind caual Bayesian Networks"></a>The philosophy behind caual Bayesian Networks</h2><blockquote>
+<h3><span id="马尔可夫等价类">马尔可夫等价类</span></h3><p><img src="http://hellofromkira.oss-cn-beijing.aliyuncs.com/2020/06/21/15926397039859.jpg?x-oss-process=image/auto-orient,1/quality,q_90" alt="-w441"></p>
+<h2><span id="the-philosophy-behind-caual-bayesian-networks">The philosophy behind caual Bayesian Networks</span></h2><blockquote>
 <p>It seems that if conditional independence judgments are byproducts of stored causal relationships, then tapping and representing those relationships directly would be a more natural and more reliable way of expressing what we know or believe about the world. </p>
 </blockquote>
-<h2 id="Causal-network的优越性"><a href="#Causal-network的优越性" class="headerlink" title="Causal network的优越性"></a>Causal network的优越性</h2><ol>
+<h2><span id="causal-network的优越性">Causal network的优越性</span></h2><ol>
 <li>causal mod­els (assuming they are valid) are much more <strong>informative</strong> than probability models.<ol>
 <li>A joint distribution tells us how probable events are and how probabilities would change with subsequent observations, but a causal model also tells us how these probabilities would change as a result of external interventions   </li>
 </ol>
@@ -653,17 +727,17 @@
 </ol>
 </li>
 </ol>
-<h2 id="Causal-Bayesian-network和Bayesian-network区别"><a href="#Causal-Bayesian-network和Bayesian-network区别" class="headerlink" title="Causal Bayesian network和Bayesian network区别"></a>Causal Bayesian network和Bayesian network区别</h2><ol>
+<h2><span id="causal-bayesian-network和bayesian-network区别">Causal Bayesian network和Bayesian network区别</span></h2><ol>
 <li><strong>CBN中的操作是do/intervene，BN中的操作是observe，do可以得出直接因果关系，observe只能得出相关性</strong></li>
 </ol>
 <p><img src="http://hellofromkira.oss-cn-beijing.aliyuncs.com/2020/06/21/15926708137133.jpg?x-oss-process=image/auto-orient,1/quality,q_90" alt="-w451"></p>
-<h2 id="Definition-of-causal-Bayesian-network"><a href="#Definition-of-causal-Bayesian-network" class="headerlink" title="Definition of causal Bayesian network"></a>Definition of causal Bayesian network</h2><p>P($v$)是集合V上的概率分布<br>P$x$($v$)是定义在intervention do(X=$x$)上的概率分布<br><img src="http://hellofromkira.oss-cn-beijing.aliyuncs.com/2020/06/21/15926708906062.jpg?x-oss-process=image/auto-orient,1/quality,q_90" alt="-w441"></p>
+<h2><span id="definition-of-causal-bayesian-network">Definition of causal Bayesian network</span></h2><p>P($v$)是集合V上的概率分布<br>P$x$($v$)是定义在intervention do(X=$x$)上的概率分布<br><img src="http://hellofromkira.oss-cn-beijing.aliyuncs.com/2020/06/21/15926708906062.jpg?x-oss-process=image/auto-orient,1/quality,q_90" alt="-w441"></p>
 <ol>
 <li>因果贝叶斯网络应该符合概率图模型的标准</li>
 <li>对于干涉的部分，P(do(X=$x$))=1</li>
 <li>被干涉变量的父节点的概率分布是不变的。（并且注意的一点:这里讲干涉的分布形式成功转换为了正常的概率分布形式）</li>
 </ol>
-<h2 id="Properties-of-Causal-Bayesian-network"><a href="#Properties-of-Causal-Bayesian-network" class="headerlink" title="Properties of Causal Bayesian network"></a>Properties of Causal Bayesian network</h2><p><img src="http://hellofromkira.oss-cn-beijing.aliyuncs.com/2020/06/21/15926711948178.jpg?x-oss-process=image/auto-orient,1/quality,q_90" alt="-w459"></p>
+<h2><span id="properties-of-causal-bayesian-network">Properties of Causal Bayesian network</span></h2><p><img src="http://hellofromkira.oss-cn-beijing.aliyuncs.com/2020/06/21/15926711948178.jpg?x-oss-process=image/auto-orient,1/quality,q_90" alt="-w459"></p>
 <ul>
 <li>truncated factorization：justify the deletion procedure<ul>
 <li>deletion：在causal network中，do(X)相当于把X与其predecessor全部断开</li>
@@ -680,7 +754,7 @@
 <li>控制了$Vi$的直接原因$PAi$（一组令Vi independent of its predecessor的变量）,那么剩下的变量就不会影响$Vi$的概率分布</li>
 <li>只有$Vi$的descendants的概率分布会受到do操作的影响</li>
 </ul>
-<h2 id="Causal-relationship-and-their-stability"><a href="#Causal-relationship-and-their-stability" class="headerlink" title="Causal relationship and their stability"></a>Causal relationship and their stability</h2><ol>
+<h2><span id="causal-relationship-and-their-stability">Causal relationship and their stability</span></h2><ol>
 <li>为了检验$Xi$对$Xj$是否有causal influence，进行操作do(X=$Xi$)<ul>
 <li>只有$Xi$的descendant会受到intervention的影响</li>
 <li>计算P$xi$($Xj$), 看$Xj$的分布是否发生了变化，若发生了变化则说明$Xi$对$Xj$有causal influence</li>
@@ -692,18 +766,18 @@
 </ul>
 </li>
 </ol>
-<h2 id="一些概念"><a href="#一些概念" class="headerlink" title="一些概念"></a>一些概念</h2><h3 id="Markov-Blanket"><a href="#Markov-Blanket" class="headerlink" title="Markov Blanket"></a>Markov Blanket</h3><ol>
+<h2><span id="一些概念">一些概念</span></h2><h3><span id="markov-blanket">Markov Blanket</span></h3><ol>
 <li>MB包括：all parents, children, and spouses of the target（X）</li>
 <li>一个节点的MB：contains all the variables that shield the node from the rest of the network.</li>
 <li>MB is the only knowledge needed to predict the behavior of that node and its children</li>
 <li>例子：<img src="http://hellofromkira.oss-cn-beijing.aliyuncs.com/2020/06/21/15926418193843.jpg?x-oss-process=image/auto-orient,1/quality,q_90" alt="-w835"></li>
 </ol>
-<h3 id="Markov-Process"><a href="#Markov-Process" class="headerlink" title="Markov Process"></a>Markov Process</h3><blockquote>
+<h3><span id="markov-process">Markov Process</span></h3><blockquote>
 <p>a random process in which the future is independent of the past, given the present</p>
 </blockquote>
-<h3 id="do操作符"><a href="#do操作符" class="headerlink" title="do操作符"></a>do操作符</h3><p>do(X),相当于令x已知，将x与所有指向x的点断开</p>
-<h2 id="Backdoor-Criteria"><a href="#Backdoor-Criteria" class="headerlink" title="Backdoor Criteria"></a>Backdoor Criteria</h2><h3 id="什么是存在干扰"><a href="#什么是存在干扰" class="headerlink" title="什么是存在干扰"></a>什么是存在干扰</h3><p><img src="http://hellofromkira.oss-cn-beijing.aliyuncs.com/2020/06/21/15926653674927.jpg?x-oss-process=image/auto-orient,1/quality,q_90" alt="-w458"></p>
-<h3 id="引入Backdoor-Criteria的原因"><a href="#引入Backdoor-Criteria的原因" class="headerlink" title="引入Backdoor Criteria的原因"></a>引入Backdoor Criteria的原因</h3><ul>
+<h3><span id="do操作符">do操作符</span></h3><p>do(X),相当于令x已知，将x与所有指向x的点断开</p>
+<h2><span id="backdoor-criteria">Backdoor Criteria</span></h2><h3><span id="什么是存在干扰">什么是存在干扰</span></h3><p><img src="http://hellofromkira.oss-cn-beijing.aliyuncs.com/2020/06/21/15926653674927.jpg?x-oss-process=image/auto-orient,1/quality,q_90" alt="-w458"></p>
+<h3><span id="引入backdoor-criteria的原因">引入Backdoor Criteria的原因</span></h3><ul>
 <li>为了便于在实验的时候选择控制变量，确定对哪些变量进行intervene<ul>
 <li>在causal inference时，控制变量就是confounder（混淆变量）</li>
 </ul>
@@ -713,14 +787,14 @@
 </ul>
 </li>
 </ul>
-<h3 id="Backdoor-Path"><a href="#Backdoor-Path" class="headerlink" title="Backdoor Path"></a>Backdoor Path</h3><blockquote>
+<h3><span id="backdoor-path">Backdoor Path</span></h3><blockquote>
 <p> $A$’s backdoor path is a <strong>non-causal path from $A$ to $Y$</strong>. They are “backdoor” paths because they flow backwards out of A: all of these paths point into A.</p>
 </blockquote>
 <ul>
 <li>删除所有以A为起点的path(frontdoor path)后，保留的就是backdoor path</li>
 <li>backdoor path里存在confounder</li>
 </ul>
-<h4 id="两种backdoor-path结构"><a href="#两种backdoor-path结构" class="headerlink" title="两种backdoor path结构"></a>两种backdoor path结构</h4><ol>
+<h4><span id="两种backdoor-path结构">两种backdoor path结构</span></h4><ol>
 <li>Common Causes<ul>
 <li><img src="http://hellofromkira.oss-cn-beijing.aliyuncs.com/2020/06/21/15926659776902.jpg?x-oss-process=image/auto-orient,1/quality,q_90" alt="-w247"></li>
 <li>A是treatment，Y是outcome，X是confounder<ul>
@@ -739,7 +813,7 @@
 <ul>
 <li><img src="http://hellofromkira.oss-cn-beijing.aliyuncs.com/2020/06/21/15926662438389.jpg?x-oss-process=image/auto-orient,1/quality,q_90" alt="-w313"></li>
 </ul>
-<h4 id="unblocked-path-blocked-path"><a href="#unblocked-path-blocked-path" class="headerlink" title="unblocked path / blocked path"></a>unblocked path / blocked path</h4><p><img src="http://hellofromkira.oss-cn-beijing.aliyuncs.com/2020/06/21/15926666744310.jpg?x-oss-process=image/auto-orient,1/quality,q_90" alt="-w169"></p>
+<h4><span id="unblocked-path-blocked-path">unblocked path / blocked path</span></h4><p><img src="http://hellofromkira.oss-cn-beijing.aliyuncs.com/2020/06/21/15926666744310.jpg?x-oss-process=image/auto-orient,1/quality,q_90" alt="-w169"></p>
 <ol>
 <li>存在unblocked backdoor path，x未知，A和Y条件不独立，A和Y有两种关系<ul>
 <li>$A$直接导致了$Y$(直接因果关系)</li>
@@ -759,7 +833,7 @@
 </ol>
 </li>
 </ol>
-<h4 id="Berkson’s-paradox"><a href="#Berkson’s-paradox" class="headerlink" title="Berkson’s paradox"></a>Berkson’s paradox</h4><ol>
+<h4><span id="berksons-paradox">Berkson’s paradox</span></h4><ol>
 <li><p>现象</p>
 <blockquote>
 <p>two values can statistically be negatively correlated even when they appear positively correlated in the population.</p>
@@ -776,7 +850,7 @@
 <li><p>与confounder不一样！！confounder是在研究因果关系时的控制变量；而berkson paradox仅是一个现象</p>
 </li>
 </ol>
-<h3 id="Definition-of-Backdoor-criterion"><a href="#Definition-of-Backdoor-criterion" class="headerlink" title="Definition of Backdoor criterion"></a>Definition of Backdoor criterion</h3><blockquote>
+<h3><span id="definition-of-backdoor-criterion">Definition of Backdoor criterion</span></h3><blockquote>
 <p>An effect of A on Y is identifiable if either:</p>
 <ol>
 <li>No backdoor paths from A to Y</li>
@@ -793,7 +867,7 @@
 <li>简而言之，backdoor criterion用于检测A到Y是否有直接的因果关系</li>
 <li>借助backdoor criterion可以给已知DAG消歧，确定唯一的因果关系</li>
 </ul>
-<h3 id="Backdoor-criterion-and-Ignorability"><a href="#Backdoor-criterion-and-Ignorability" class="headerlink" title="Backdoor criterion and Ignorability"></a>Backdoor criterion and Ignorability</h3><blockquote>
+<h3><span id="backdoor-criterion-and-ignorability">Backdoor criterion and Ignorability</span></h3><blockquote>
 <p> Ignorability Assumption:</p>
 <ul>
 <li>no unmeasured confounders</li>
@@ -888,7 +962,7 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-06-21T00:48:01+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-06-21T01:04:35+08:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
     <p>更新于：Jun 21, 2020</p>
@@ -1041,7 +1115,7 @@
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#贝叶斯定理"><span class="toc-text">贝叶斯定理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#引入贝叶斯网络的原因"><span class="toc-text">引入贝叶斯网络的原因</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#贝叶斯网络解决的问题"><span class="toc-text">贝叶斯网络解决的问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#贝叶斯网络的相关定义及特性"><span class="toc-text">贝叶斯网络的相关定义及特性</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Markov-parents"><span class="toc-text">Markov parents</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Markov-Compatibility"><span class="toc-text">Markov Compatibility</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Parental-Markov-Condition"><span class="toc-text">Parental Markov Condition</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Ordered-Markov-Condition"><span class="toc-text">Ordered Markov Condition</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Observational-Equivalence"><span class="toc-text">Observational Equivalence</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Techniques-for-calculation"><span class="toc-text">Techniques for calculation</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Independency-in-BN"><span class="toc-text">Independency in BN</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Local-Independency"><span class="toc-text">Local Independency</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Global-Independency"><span class="toc-text">Global Independency</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#三种结构"><span class="toc-text">三种结构</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#D-separation"><span class="toc-text">D-separation</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#贝叶斯网络的创建"><span class="toc-text">贝叶斯网络的创建</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#生成贝叶斯网络初始顺序的重要性"><span class="toc-text">生成贝叶斯网络初始顺序的重要性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Structure-Learning"><span class="toc-text">Structure Learning</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Parameter-learning"><span class="toc-text">Parameter learning</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#实例"><span class="toc-text">实例</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#贝叶斯网络模型在Causal-Inference时的局限性"><span class="toc-text">贝叶斯网络模型在Causal Inference时的局限性</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#马尔可夫等价类"><span class="toc-text">马尔可夫等价类</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#The-philosophy-behind-caual-Bayesian-Networks"><span class="toc-text">The philosophy behind caual Bayesian Networks</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Causal-network的优越性"><span class="toc-text">Causal network的优越性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Causal-Bayesian-network和Bayesian-network区别"><span class="toc-text">Causal Bayesian network和Bayesian network区别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Definition-of-causal-Bayesian-network"><span class="toc-text">Definition of causal Bayesian network</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Properties-of-Causal-Bayesian-network"><span class="toc-text">Properties of Causal Bayesian network</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Causal-relationship-and-their-stability"><span class="toc-text">Causal relationship and their stability</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#一些概念"><span class="toc-text">一些概念</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Markov-Blanket"><span class="toc-text">Markov Blanket</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Markov-Process"><span class="toc-text">Markov Process</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#do操作符"><span class="toc-text">do操作符</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Backdoor-Criteria"><span class="toc-text">Backdoor Criteria</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#什么是存在干扰"><span class="toc-text">什么是存在干扰</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#引入Backdoor-Criteria的原因"><span class="toc-text">引入Backdoor Criteria的原因</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Backdoor-Path"><span class="toc-text">Backdoor Path</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#两种backdoor-path结构"><span class="toc-text">两种backdoor path结构</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#unblocked-path-blocked-path"><span class="toc-text">unblocked path &#x2F; blocked path</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Berkson’s-paradox"><span class="toc-text">Berkson’s paradox</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Definition-of-Backdoor-criterion"><span class="toc-text">Definition of Backdoor criterion</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Backdoor-criterion-and-Ignorability"><span class="toc-text">Backdoor criterion and Ignorability</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#"><span class="toc-text">贝叶斯定理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#"><span class="toc-text">引入贝叶斯网络的原因</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#"><span class="toc-text">贝叶斯网络解决的问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#"><span class="toc-text">贝叶斯网络的相关定义及特性</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#"><span class="toc-text">Markov parents</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#"><span class="toc-text">Markov Compatibility</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#"><span class="toc-text">Parental Markov Condition</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#"><span class="toc-text">Ordered Markov Condition</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#"><span class="toc-text">Observational Equivalence</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#"><span class="toc-text">Techniques for calculation</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#"><span class="toc-text">Independency in BN</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#"><span class="toc-text">Local Independency</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#"><span class="toc-text">Global Independency</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#"><span class="toc-text">三种结构</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#"><span class="toc-text">D-separation</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#"><span class="toc-text">贝叶斯网络的创建</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#"><span class="toc-text">生成贝叶斯网络初始顺序的重要性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#"><span class="toc-text">Structure Learning</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#"><span class="toc-text">Parameter learning</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#"><span class="toc-text">实例</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#"><span class="toc-text">贝叶斯网络模型在Causal Inference时的局限性</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#"><span class="toc-text">马尔可夫等价类</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#"><span class="toc-text">The philosophy behind caual Bayesian Networks</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#"><span class="toc-text">Causal network的优越性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#"><span class="toc-text">Causal Bayesian network和Bayesian network区别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#"><span class="toc-text">Definition of causal Bayesian network</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#"><span class="toc-text">Properties of Causal Bayesian network</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#"><span class="toc-text">Causal relationship and their stability</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#"><span class="toc-text">一些概念</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#"><span class="toc-text">Markov Blanket</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#"><span class="toc-text">Markov Process</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#"><span class="toc-text">do操作符</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#"><span class="toc-text">Backdoor Criteria</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#"><span class="toc-text">什么是存在干扰</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#"><span class="toc-text">引入Backdoor Criteria的原因</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#"><span class="toc-text">Backdoor Path</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#"><span class="toc-text">两种backdoor path结构</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#"><span class="toc-text">unblocked path &#x2F; blocked path</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#"><span class="toc-text">Berkson’s paradox</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#"><span class="toc-text">Definition of Backdoor criterion</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#"><span class="toc-text">Backdoor criterion and Ignorability</span></a></li></ol></li></ol>
     </div>
   </section>
 
