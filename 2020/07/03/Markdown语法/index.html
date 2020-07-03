@@ -16,7 +16,7 @@
 
   <!-- 页面元数据 -->
   
-    <title>Hello World - Welcome</title>
+    <title>Markdown语法 - Welcome</title>
   
   
 
@@ -343,8 +343,8 @@
         
           
   <h1 class="title">
-    <a href="/2020/06/19/hello-world/">
-      Hello World
+    <a href="/2020/07/03/Markdown%E8%AF%AD%E6%B3%95/">
+      Markdown语法
     </a>
   </h1>
 
@@ -374,7 +374,7 @@
               <div class="new-meta-item date">
   <a class='notlink'>
     <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>发布于：Jun 19, 2020</p>
+    <p>发布于：Jul 3, 2020</p>
   </a>
 </div>
 
@@ -397,19 +397,169 @@
       <section class="article typo">
         <div class="article-entry" itemprop="articleBody">
           
-          <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2><span id="quick-start">Quick Start</span></h2><h3><span id="create-a-new-post">Create a new post</span></h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+          <p>[TOC]</p>
+<p>参考链接：<a href="https://www.jianshu.com/p/ebe52d2d468f" target="_blank" rel="noopener">https://www.jianshu.com/p/ebe52d2d468f</a></p>
+<h1><span id="简介">简介</span></h1><h2><span id="内嵌html语法">内嵌HTML语法</span></h2><blockquote>
+<p>HTML 是一种发布格式，Markdown 是一种创作格式。<br>Markdown语法集合比较小，只是HTML标签的一小部分。<br>对于 Markdown 中未包含的标签, 可以直接使用 HTML标签，例如用 HTML <code>&lt;a&gt;</code> 标签替代 Markdown 的链接语法。</p>
+</blockquote>
+<h2><span id="特殊字符的转义">特殊字符的转义</span></h2><blockquote>
+<p>在 HTML 中, 有两个字符需要特殊对待: &lt; 和 &amp;，左尖括号用于起始标签。如果你想将它们用作字面量, 你必须将它们转义为字符实体, 例如<code>&amp;lt</code>; 和 <code>&amp;amp</code>;。</p>
+</blockquote>
+<h1><span id="行内语法">行内语法</span></h1><h2><span id="注释">注释</span></h2><ul>
+<li><p>html注释</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 快捷键command+&#x2F;</span><br><span class="line">&lt;!--不会显示在网页--&gt;</span><br></pre></td></tr></table></figure>
+<p>效果：<!--haha--></p>
+</li>
+<li><p>hack方法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[&#x2F;&#x2F;]: # (注释内容)</span><br></pre></td></tr></table></figure>
+<p>效果： </p>
+</li>
+</ul>
+<h2><span id="多级标题">多级标题</span></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># 一级标题</span><br><span class="line">## 二级标题</span><br><span class="line">### 三级标题</span><br><span class="line">#### 四级标题</span><br><span class="line">##### 五级标题</span><br><span class="line">###### 六级标题  &lt;!--最多6级标题--&gt;</span><br></pre></td></tr></table></figure>
+<h2><span id="字的样式">字的样式</span></h2><ol>
+<li>字形<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">*斜体*</span><br><span class="line">**粗体**</span><br><span class="line">***加粗斜体***</span><br><span class="line">~~删除线~~</span><br><span class="line">&#x3D;&#x3D;背景高亮&#x3D;&#x3D;</span><br></pre></td></tr></table></figure>
+效果：</li>
+</ol>
+<p><em>斜体</em><br><strong>粗体</strong><br><strong><em>加粗斜体</em></strong><br><del>删除线</del><br>==背景高亮==</p>
+<ol>
+<li>颜色/字号<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;font color&#x3D;gray size&#x3D;5&gt;gray&lt;&#x2F;font&gt;</span><br><span class="line">&lt;font color&#x3D;#00ffff size&#x3D;3&gt;null&lt;&#x2F;font&gt;</span><br></pre></td></tr></table></figure>
+效果：<br><font color="gray" size="5">gray</font><br><font color="#00ffff" size="3">null</font></li>
+<li>字体<br><font face="微软雅黑">我是微软雅黑</font><br><font face="STCAIYUN">我是华文彩云</font></li>
+</ol>
+<h2><span id="转义字符">转义字符</span></h2><blockquote>
+<p>Markdown里的转义字符为 / </p>
+<blockquote>
+<p>需要转义的有</p>
+<blockquote>
+<p>\ 反斜杠 ` 反引号 * 星号 _ 下划线 {} 大括号 [] 中括号 () 小括号  # 井号 + 加号 - 减号 . 英文句号 ! 感叹号</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<h2><span id="超链接">超链接</span></h2><ul>
+<li>行内式</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># [链接文字]（具体链接 “title”）</span><br><span class="line"># title就是鼠标悬停在链接上显示的字</span><br><span class="line">[百度一下](https:&#x2F;&#x2F;www.baidu.com &quot;baidu&quot;)</span><br></pre></td></tr></table></figure>
+<p>效果：<a href="https://www.baidu.com" target="_blank" rel="noopener" title="baidu">百度一下</a></p>
+<ul>
+<li><p>参考式<br>常用于文章多处引用同一链接，分为两部分：</p>
+<ol>
+<li><p>在需要引用链接的地方：<code>[链接文字][链接标记]</code></p>
+</li>
+<li><p>在文章的任意地方标明：<code>[链接标记][具体链接]</code></p>
+<ol>
+<li>多放在文章末尾</li>
+</ol>
+<p>效果：<br>我经常访问<a href="http://www.google.com" target="_blank" rel="noopener">Google</a>    </p>
+</li>
+</ol>
+</li>
+</ul>
+<ul>
+<li>脚注(HEXO原生不支持)<br>脚注内容自动显示在文章末尾<br>效果：使用 Markdown<a href="Markdown是一种纯文本标记语言">^1</a>可以效率的书写文档, 直接转换成 HTML[^2]</li>
+</ul>
+<p>[^2]: HyperText Markup Language 超文本标记语言</p>
+<ul>
+<li>自动链接<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;address@example.com&gt;</span><br></pre></td></tr></table></figure>
+效果：&lt;<a href="mailto:address@example.com">address@example.com</a>&gt;</li>
+</ul>
+<h2><span id="列表">列表</span></h2><ol>
+<li><p>无序列表<code>* + -</code></p>
+<ul>
+<li>效果：<ul>
+<li>1<ul>
+<li>2</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>有序列表<code>1. 2. .....</code></p>
+</li>
+<li><p>定义型列表</p>
+<blockquote>
+<p>定义型列表由名词和解释组成。一行写上定义，紧跟一行写上解释。解释的写法:紧跟一个缩进(Tab)</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Markdown</span><br><span class="line">:   轻量级文本标记语言</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>MWeb不支持</p>
+</blockquote>
+</li>
+<li><p>任务列表</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 下面三个元素之间有空格</span><br><span class="line">+&#x2F;- [] 任务名称</span><br></pre></td></tr></table></figure>
+<p>效果：</p>
+<ul>
+<li><input disabled type="checkbox"> 任务一</li>
+<li><input checked disabled type="checkbox"> 任务二</li>
+</ul>
+</li>
+</ol>
+<h2><span id="多级引用">多级引用</span></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt;</span><br><span class="line">&gt;&gt;</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>第一级</p>
+<blockquote>
+<p>第二级</p>
+<blockquote>
+<p>第三级</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<h1><span id="块语法">块语法</span></h1><h2><span id="内容目录">内容目录</span></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># 一般情况</span><br><span class="line">[TOC]</span><br><span class="line"># hexo发布文章</span><br><span class="line">&lt;!-- toc --&gt;</span><br></pre></td></tr></table></figure>
+<h2><span id="代码块">代码块</span></h2><ul>
+<li><p>行内式子</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#96;printf()&#96;</span><br></pre></td></tr></table></figure>
+<p>效果：<code>printf()</code></p>
+</li>
+<li><p>多行代码</p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">上下各三个</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">## 画图</span><br><span class="line">### 顺序图</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">st&#x3D;&gt;start: 开始</span><br><span class="line">e&#x3D;&gt;end: 结束</span><br><span class="line">op&#x3D;&gt;operation: 我的操作</span><br><span class="line">cond&#x3D;&gt;condition: 确认？</span><br><span class="line"></span><br><span class="line">st-&gt;op-&gt;cond</span><br><span class="line">cond(yes)-&gt;e</span><br><span class="line">cond(no)-&gt;op</span><br></pre></td></tr></table></figure>
+<ul>
+<li>效果：</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">st&#x3D;&gt;start: 开始</span><br><span class="line">e&#x3D;&gt;end: 结束</span><br><span class="line">op&#x3D;&gt;operation: 我的操作</span><br><span class="line">cond&#x3D;&gt;condition: 确认？</span><br><span class="line"></span><br><span class="line">st-&gt;op-&gt;cond</span><br><span class="line">cond(yes)-&gt;e</span><br><span class="line">cond(no)-&gt;op</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3><span id="run-server">Run server</span></h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3><span id="generate-static-files">Generate static files</span></h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<h3><span id="流程图">流程图</span></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#96;&#96;&#96;sequence</span><br><span class="line">张三-&gt;李四: 嘿，小四儿, 写博客了没?</span><br><span class="line">Note right of 李四: 李四愣了一下，说：</span><br><span class="line">李四--&gt;张三: 忙得吐血，哪有时间写。</span><br></pre></td></tr></table></figure>
+<ul>
+<li>效果</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">张三-&gt;李四: 嘿，小四儿, 写博客了没?</span><br><span class="line">Note right of 李四: 李四愣了一下，说：</span><br><span class="line">李四--&gt;张三: 忙得吐血，哪有时间写。</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3><span id="deploy-to-remote-sites">Deploy to remote sites</span></h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+<h2><span id="表格">表格</span></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">第一|第二|第三</span><br><span class="line">---:|:---|:---:</span><br><span class="line">hello,it&#39;s me| hello,it&#39;s me| hello,it&#39;s me</span><br></pre></td></tr></table></figure>
+<table>
+<thead>
+<tr>
+<th align="right">第一</th>
+<th align="left">第二</th>
+<th align="center">第三</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="right">hello,it’s me</td>
+<td align="left">hello,it’s me</td>
+<td align="center">hello,it’s me</td>
+</tr>
+</tbody></table>
+<p>第一行：列名<br>第二行：格式</p>
+<ul>
+<li>左对齐：<code>:</code>在左边</li>
+<li>右对齐：<code>:</code>在右边</li>
+<li>中间对齐：<code>:</code>在两边</li>
+</ul>
+<p>第三行：具体内容</p>
+<h2><span id="分割线">分割线</span></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"> #效果相同</span><br><span class="line">* * *</span><br><span class="line">***</span><br><span class="line">*****</span><br><span class="line">- - -</span><br><span class="line">-----------</span><br></pre></td></tr></table></figure>
+<hr>
+<h2><span id="latex公式">LaTex公式</span></h2><ol>
+<li>行内公式<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ 公式 $</span><br></pre></td></tr></table></figure>
+效果：$X+Y=Z$</li>
+<li>整行公式<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$$ 公式 $$</span><br></pre></td></tr></table></figure>
+效果：$$ X+Y=Z $$ </li>
+<li>关于数学公式的书写：<a href="https://math.meta.stackexchange.com/questions/5020/mathjax-basic-tutorial-and-quick-reference" target="_blank" rel="noopener">MathJax</a></li>
+</ol>
 
           
             <div class='article_footer'>
@@ -446,7 +596,7 @@
           
         
           
-            <p>本文永久链接是：<a href=http://yoursite.com/2020/06/19/hello-world/>http://yoursite.com/2020/06/19/hello-world/</a></p>
+            <p>本文永久链接是：<a href=http://yoursite.com/2020/07/03/Markdown%E8%AF%AD%E6%B3%95/>http://yoursite.com/2020/07/03/Markdown%E8%AF%AD%E6%B3%95/</a></p>
           
         
       </blockquote>
@@ -497,10 +647,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-06-19T22:07:24+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-07-03T18:45:22+08:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：Jun 19, 2020</p>
+    <p>更新于：Jul 3, 2020</p>
   </a>
 </div>
 
@@ -524,7 +674,7 @@
       
         <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer"
           
-          href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2020/06/19/hello-world/&title=Hello World - Welcome&summary="
+          href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2020/07/03/Markdown%E8%AF%AD%E6%B3%95/&title=Markdown语法 - Welcome&summary="
           
           >
           
@@ -536,7 +686,7 @@
       
         <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer"
           
-          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://yoursite.com/2020/06/19/hello-world/&title=Hello World - Welcome&summary="
+          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://yoursite.com/2020/07/03/Markdown%E8%AF%AD%E6%B3%95/&title=Markdown语法 - Welcome&summary="
           
           >
           
@@ -548,7 +698,7 @@
       
         <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer"
           
-          href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2020/06/19/hello-world/&title=Hello World - Welcome&summary="
+          href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2020/07/03/Markdown%E8%AF%AD%E6%B3%95/&title=Markdown语法 - Welcome&summary="
           
           >
           
@@ -572,20 +722,28 @@
         
           <div class="prev-next">
             
-              <a class='prev' href='/2020/06/20/Causal-Bayesian-Network/'>
-                <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>Causal Bayesian Network</p>
+            
+              <a class='next' href='/2020/07/03/Hexo%E4%BD%BF%E7%94%A8/'>
+                <p class='title'>Hexo使用<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
                 <p class='content'>
 
 
-Bayesian Network
-贝叶斯定理
-引入贝叶斯网络的原因
-贝叶斯网络解决的问题
-贝叶斯网络的相关定义及特性
-Markov parents
-Markov Compatibility...</p>
+常用指令
+创建一篇新文章/页面
+本地查看
+清空public文件夹
+生成网站静态文件
+部署网站
+发布到GitHub
+
+
+
+
+
+[TOC]
+常用指令在对网站进行操作之前,在终端输入
+1cd &...</p>
               </a>
-            
             
           </div>
         
@@ -629,7 +787,7 @@ Markov Compatibility...</p>
 
   <script>
     window.subData = {
-      title: 'Hello World',
+      title: 'Markdown语法',
       tools: true
     }
   </script>
@@ -656,7 +814,7 @@ Markov Compatibility...</p>
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#"><span class="toc-text">Quick Start</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#"><span class="toc-text">Create a new post</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#"><span class="toc-text">Run server</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#"><span class="toc-text">Generate static files</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#"><span class="toc-text">Deploy to remote sites</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#"><span class="toc-text">内嵌HTML语法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#"><span class="toc-text">特殊字符的转义</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#"><span class="toc-text">注释</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#"><span class="toc-text">多级标题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#"><span class="toc-text">字的样式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#"><span class="toc-text">转义字符</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#"><span class="toc-text">超链接</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#"><span class="toc-text">列表</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#"><span class="toc-text">多级引用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#"><span class="toc-text">内容目录</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#"><span class="toc-text">代码块</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#"><span class="toc-text">流程图</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#"><span class="toc-text">表格</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#"><span class="toc-text">分割线</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#"><span class="toc-text">LaTex公式</span></a></li></ol>
     </div>
   </section>
 
