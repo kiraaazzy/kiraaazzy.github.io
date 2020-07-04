@@ -14,18 +14,18 @@
 <meta property="og:url" content="http://yoursite.com/2020/07/04/Pandas-groupby%E5%87%BD%E6%95%B0/index.html">
 <meta property="og:site_name" content="Welcome">
 <meta property="og:description" content="参考链接：https:&#x2F;&#x2F;blog.csdn.net&#x2F;wuzhongqiang&#x2F;article&#x2F;details&#x2F;104714458  groupby()对数据按照某一标准进行分组，然后进行一些统计。任何groupby操作都会涉及到下面的三个操作之一：  Splitting：分割数据 Applying：应用一个函数 Combining:合并结果  在许多情况下，我们将数据分成几组，并在每个子集上应">
-<meta property="og:image" content="http://yoursite.com/2020/07/04/Pandas-groupby%E5%87%BD%E6%95%B0/media/15938329696990.jpg">
-<meta property="og:image" content="http://yoursite.com/2020/07/04/Pandas-groupby%E5%87%BD%E6%95%B0/media/15938364985352.jpg">
-<meta property="og:image" content="http://yoursite.com/2020/07/04/Pandas-groupby%E5%87%BD%E6%95%B0/media/15938364029777.jpg">
-<meta property="og:image" content="http://yoursite.com/2020/07/04/Pandas-groupby%E5%87%BD%E6%95%B0/media/15938364330984.jpg">
-<meta property="og:image" content="http://yoursite.com/2020/07/04/Pandas-groupby%E5%87%BD%E6%95%B0/media/15938364596851.jpg">
+<meta property="og:image" content="http://hellofromkira.oss-cn-beijing.aliyuncs.com/2020/07/04/15938329696990.jpg?x-oss-process=image/auto-orient,1/quality,q_90">
+<meta property="og:image" content="http://hellofromkira.oss-cn-beijing.aliyuncs.com/2020/07/04/15938364985352.jpg?x-oss-process=image/auto-orient,1/quality,q_90">
+<meta property="og:image" content="http://hellofromkira.oss-cn-beijing.aliyuncs.com/2020/07/04/15938364029777.jpg?x-oss-process=image/auto-orient,1/quality,q_90">
+<meta property="og:image" content="http://hellofromkira.oss-cn-beijing.aliyuncs.com/2020/07/04/15938364330984.jpg?x-oss-process=image/auto-orient,1/quality,q_90">
+<meta property="og:image" content="http://hellofromkira.oss-cn-beijing.aliyuncs.com/2020/07/04/15938364596851.jpg?x-oss-process=image/auto-orient,1/quality,q_90">
 <meta property="article:published_time" content="2020-07-04T03:12:43.000Z">
-<meta property="article:modified_time" content="2020-07-04T05:37:43.291Z">
+<meta property="article:modified_time" content="2020-07-04T06:57:23.043Z">
 <meta property="article:author" content="Kira Zhang">
 <meta property="article:tag" content="Python">
 <meta property="article:tag" content="Pandas">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://yoursite.com/2020/07/04/Pandas-groupby%E5%87%BD%E6%95%B0/media/15938329696990.jpg">
+<meta name="twitter:image" content="http://hellofromkira.oss-cn-beijing.aliyuncs.com/2020/07/04/15938329696990.jpg?x-oss-process=image/auto-orient,1/quality,q_90">
   
     <link rel="alternative" href="/atom.xml" title="Welcome" type="application/atom+xml">
   
@@ -204,7 +204,7 @@
 </ul>
 <p>例如，有如下dataframe</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">ipl_data &#x3D; &#123;&#39;Team&#39;: [&#39;Riders&#39;, &#39;Riders&#39;, &#39;Devils&#39;, &#39;Devils&#39;, &#39;Kings&#39;,</span><br><span class="line">         &#39;kings&#39;, &#39;Kings&#39;, &#39;Kings&#39;, &#39;Riders&#39;, &#39;Royals&#39;, &#39;Royals&#39;, &#39;Riders&#39;],</span><br><span class="line">         &#39;Rank&#39;: [1, 2, 2, 3, 3,4 ,1 ,1,2 , 4,1,2],</span><br><span class="line">         &#39;Year&#39;: [2014,2015,2014,2015,2014,2015,2016,2017,2016,2014,2015,2017],</span><br><span class="line">         &#39;Points&#39;:[876,789,863,673,741,812,756,788,694,701,804,690]&#125;</span><br><span class="line">df &#x3D; pd.DataFrame(ipl_data)</span><br></pre></td></tr></table></figure>
-<p>输出：<br><img src="media/15938329696990.jpg" alt="-w245"></p>
+<p>输出：<br><img src="http://hellofromkira.oss-cn-beijing.aliyuncs.com/2020/07/04/15938329696990.jpg?x-oss-process=image/auto-orient,1/quality,q_90" alt="-w245"></p>
 <h2><span id="分割对象">分割对象</span></h2><p>语法：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">obj.groupby(‘key’)</span><br><span class="line">obj.groupby([‘key1’,‘key2’])</span><br><span class="line">obj.groupby(key,axis&#x3D;1)</span><br></pre></td></tr></table></figure>
 <p>例子：</p>
@@ -219,8 +219,8 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">grouped &#x3D; df.groupby(&#39;Team&#39;)</span><br><span class="line">score &#x3D; lambda x: x - x.mean()</span><br><span class="line">print(grouped.transform(score))   # 应用于原数组的index上</span><br><span class="line"></span><br><span class="line">Out:</span><br><span class="line">       Rank     Year    Points</span><br><span class="line">0  -0.75000 -1.50000 113.75000</span><br><span class="line">1   0.25000 -0.50000  26.75000</span><br><span class="line">2  -0.50000 -0.50000  95.00000</span><br><span class="line">3   0.50000  0.50000 -95.00000</span><br><span class="line">4   1.33333 -1.66667 -20.66667</span><br><span class="line">5   0.00000  0.00000   0.00000</span><br><span class="line">6  -0.66667  0.33333  -5.66667</span><br><span class="line">7  -0.66667  1.33333  26.33333</span><br><span class="line">8   0.25000  0.50000 -68.25000</span><br><span class="line">9   1.50000 -0.50000 -51.50000</span><br><span class="line">10 -1.50000  0.50000  51.50000</span><br><span class="line">11  0.25000  1.50000 -72.25000</span><br></pre></td></tr></table></figure>
 <h3><span id="applyaggtransform区别">apply/agg/transform区别</span></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">## 这里可以看出这三者的区别： </span><br><span class="line">print(grouped.transform(lambda x: print(x)))    </span><br><span class="line">print(grouped.agg(lambda x: print(x)))</span><br><span class="line">print(grouped.apply(lambda x: print(x)))</span><br></pre></td></tr></table></figure>
 
-<p><img src="media/15938364985352.jpg" alt="-w372"><br>apply()处理的对象是groupby后的子对象，一个个的类如DataFrame的数据表<br><img src="media/15938364029777.jpg" alt="-w470"><br>agg()则每次只传入整个dataframe的一列,从列的角度进行输出。<br><img src="media/15938364330984.jpg" alt="-w419"></p>
-<p>transform()是对每一个类似Dataframe的子对象按列输出<br><img src="media/15938364596851.jpg" alt="-w388"></p>
+<p><img src="http://hellofromkira.oss-cn-beijing.aliyuncs.com/2020/07/04/15938364985352.jpg?x-oss-process=image/auto-orient,1/quality,q_90" alt="-w372"><br>apply()处理的对象是groupby后的子对象，一个个的类如DataFrame的数据表<br><img src="http://hellofromkira.oss-cn-beijing.aliyuncs.com/2020/07/04/15938364029777.jpg?x-oss-process=image/auto-orient,1/quality,q_90" alt="-w470"><br>agg()则每次只传入整个dataframe的一列,从列的角度进行输出。<br><img src="http://hellofromkira.oss-cn-beijing.aliyuncs.com/2020/07/04/15938364330984.jpg?x-oss-process=image/auto-orient,1/quality,q_90" alt="-w419"></p>
+<p>transform()是对每一个类似Dataframe的子对象按列输出<br><img src="http://hellofromkira.oss-cn-beijing.aliyuncs.com/2020/07/04/15938364596851.jpg?x-oss-process=image/auto-orient,1/quality,q_90" alt="-w388"></p>
 <h2><span id="filtration">Filtration</span></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">grouped.size()   # 看一下分组后每个队的个数</span><br><span class="line">## 结果</span><br><span class="line">Team</span><br><span class="line">Devils    2</span><br><span class="line">Kings     3</span><br><span class="line">Riders    4</span><br><span class="line">Royals    2</span><br><span class="line">kings     1</span><br><span class="line">dtype: int64</span><br><span class="line"></span><br><span class="line"># 过滤到个数小于3的队伍</span><br><span class="line">print(df.groupby(&#39;Team&#39;).filter(lambda x: len(x) &gt;&#x3D; 3))</span><br><span class="line"></span><br><span class="line">## 结果：</span><br><span class="line">      Team  Rank  Year  Points</span><br><span class="line">0   Riders     1  2014     876</span><br><span class="line">1   Riders     2  2015     789</span><br><span class="line">4    Kings     3  2014     741</span><br><span class="line">6    Kings     1  2016     756</span><br><span class="line">7    Kings     1  2017     788</span><br><span class="line">8   Riders     2  2016     694</span><br><span class="line">11  Riders     2  2017     690</span><br></pre></td></tr></table></figure>
       
 
@@ -461,15 +461,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Causal Inference</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Markdown</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Python</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Causal Inference</a>
               </li>
              
               <li class="article-tag-list-item">
