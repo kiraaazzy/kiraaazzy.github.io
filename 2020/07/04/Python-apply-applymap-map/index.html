@@ -6,18 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Python:解包与打包 | Welcome</title>
+  <title>Pandas:apply,applymap,map | Welcome</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Python: 解包与打包 解包 打包 打包和解包混合 _的用法 *的使用 用于表示多个数值 用于表示可变参数 用于表示关键字参数   解包作为参数传到函数中 多返回值函数       参考链接：https:&#x2F;&#x2F;zhuanlan.zhihu.com&#x2F;p&#x2F;33896402  Python: 解包与打包解包 一个list是一个整体，想把list中每个元素当成一个个个体剥离出来，这个过程就是解包可">
+  <meta name="description" content="参考链接:https:&#x2F;&#x2F;stackoverflow.com&#x2F;questions&#x2F;19798153&#x2F;difference-between-map-applymap-and-apply-methods-in-pandas  apply()当想让方程作用每一个一维向量，可以使用apply来完成，如下所示 123456789101112131415161718In [116]: frame &amp;#x3D">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Python:解包与打包">
-<meta property="og:url" content="http://yoursite.com/2020/07/03/Python-%E8%A7%A3%E5%8C%85%E4%B8%8E%E6%89%93%E5%8C%85/index.html">
+<meta property="og:title" content="Pandas:apply,applymap,map">
+<meta property="og:url" content="http://yoursite.com/2020/07/04/Python-apply-applymap-map/index.html">
 <meta property="og:site_name" content="Welcome">
-<meta property="og:description" content="Python: 解包与打包 解包 打包 打包和解包混合 _的用法 *的使用 用于表示多个数值 用于表示可变参数 用于表示关键字参数   解包作为参数传到函数中 多返回值函数       参考链接：https:&#x2F;&#x2F;zhuanlan.zhihu.com&#x2F;p&#x2F;33896402  Python: 解包与打包解包 一个list是一个整体，想把list中每个元素当成一个个个体剥离出来，这个过程就是解包可">
-<meta property="article:published_time" content="2020-07-03T07:33:25.000Z">
-<meta property="article:modified_time" content="2020-07-04T03:17:40.627Z">
+<meta property="og:description" content="参考链接:https:&#x2F;&#x2F;stackoverflow.com&#x2F;questions&#x2F;19798153&#x2F;difference-between-map-applymap-and-apply-methods-in-pandas  apply()当想让方程作用每一个一维向量，可以使用apply来完成，如下所示 123456789101112131415161718In [116]: frame &amp;#x3D">
+<meta property="article:published_time" content="2020-07-04T02:09:34.000Z">
+<meta property="article:modified_time" content="2020-07-07T08:10:54.511Z">
 <meta property="article:author" content="Kira Zhang">
 <meta property="article:tag" content="Python">
+<meta property="article:tag" content="Pandas">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="Welcome" type="application/atom+xml">
@@ -158,79 +159,41 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Python-解包与打包" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-Python-apply-applymap-map" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      Python:解包与打包
+      Pandas:apply,applymap,map
     </h1>
   
 
         
-        <a href="/2020/07/03/Python-%E8%A7%A3%E5%8C%85%E4%B8%8E%E6%89%93%E5%8C%85/" class="archive-article-date">
-  	<time datetime="2020-07-03T07:33:25.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-03</time>
+        <a href="/2020/07/04/Python-apply-applymap-map/" class="archive-article-date">
+  	<time datetime="2020-07-04T02:09:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-04</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <!-- toc -->
-
-<ul>
-<li><a href="#python-解包与打包">Python: 解包与打包</a><ul>
-<li><a href="#解包">解包</a></li>
-<li><a href="#打包">打包</a></li>
-<li><a href="#打包和解包混合">打包和解包混合</a></li>
-<li><a href="#_的用法"><code>_</code>的用法</a></li>
-<li><a href="#的使用"><code>*</code>的使用</a><ul>
-<li><a href="#用于表示多个数值">用于表示多个数值</a></li>
-<li><a href="#用于表示可变参数">用于表示可变参数</a></li>
-<li><a href="#用于表示关键字参数">用于表示关键字参数</a></li>
-</ul>
-</li>
-<li><a href="#解包作为参数传到函数中">解包作为参数传到函数中</a></li>
-<li><a href="#多返回值函数">多返回值函数</a></li>
-</ul>
-</li>
-</ul>
-<!-- tocstop -->
-
-<blockquote>
-<p>参考链接：<a href="https://zhuanlan.zhihu.com/p/33896402" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/33896402</a></p>
+        <blockquote>
+<p>参考链接:<a href="https://stackoverflow.com/questions/19798153/difference-between-map-applymap-and-apply-methods-in-pandas" target="_blank" rel="noopener">https://stackoverflow.com/questions/19798153/difference-between-map-applymap-and-apply-methods-in-pandas</a></p>
 </blockquote>
-<h1><span id="python-解包与打包">Python: 解包与打包</span></h1><h2><span id="解包">解包</span></h2><blockquote>
-<p>一个list是一个整体，想把list中每个元素当成一个个个体剥离出来，这个过程就是解包<br>可迭代对象都可以解包</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"># 列表</span><br><span class="line">&gt;&gt;&gt; a,b,c &#x3D; [&#39;a&#39;, &#39;b&#39;, &#39;c&#39;]</span><br><span class="line">&gt;&gt;&gt; a</span><br><span class="line">&#39;a&#39;</span><br><span class="line"></span><br><span class="line"># 元组</span><br><span class="line">&gt;&gt;&gt; a,b,c &#x3D; (&#39;a&#39;, &#39;b&#39;, &#39;c&#39;)</span><br><span class="line">&gt;&gt;&gt; a</span><br></pre></td></tr></table></figure>
+<h1><span id="apply">apply()</span></h1><p>当想让方程作用每一个一维向量，可以使用apply来完成，如下所示</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">In [116]: frame &#x3D; DataFrame(np.random.randn(4, 3), columns&#x3D;list(&#39;bde&#39;), index&#x3D;[&#39;Utah&#39;, &#39;Ohio&#39;, &#39;Texas&#39;, &#39;Oregon&#39;])</span><br><span class="line"></span><br><span class="line">In [117]: frame</span><br><span class="line">Out[117]: </span><br><span class="line">               b         d         e</span><br><span class="line">Utah   -0.029638  1.081563  1.280300</span><br><span class="line">Ohio    0.647747  0.831136 -1.549481</span><br><span class="line">Texas   0.513416 -0.884417  0.195343</span><br><span class="line">Oregon -0.485454 -0.477388 -0.309548</span><br><span class="line"></span><br><span class="line">In [118]: f &#x3D; lambda x: x.max() - x.min()</span><br><span class="line"></span><br><span class="line">In [119]: frame.apply(f)</span><br><span class="line">Out[119]: </span><br><span class="line">b    1.133201</span><br><span class="line">d    1.965980</span><br><span class="line">e    2.829781</span><br><span class="line">dtype: float64</span><br></pre></td></tr></table></figure>
 <a id="more"></a>
-<h2><span id="打包">打包</span></h2><blockquote>
-<p>打包是解包的逆过程，通过zip函数实现</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; a &#x3D; [&#39;a&#39;, &#39;b&#39;, &#39;c&#39;]</span><br><span class="line">&gt;&gt;&gt; b &#x3D; [1, 2, 3]</span><br><span class="line">&gt;&gt;&gt; for i in zip(a, b):</span><br><span class="line">...     print(i)</span><br><span class="line">...</span><br><span class="line">(&#39;a&#39;, 1)</span><br><span class="line">(&#39;b&#39;, 2)</span><br><span class="line">(&#39;c&#39;, 3)</span><br></pre></td></tr></table></figure>
-<h2><span id="打包和解包混合">打包和解包混合</span></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; a &#x3D; [0, 1, 2]</span><br><span class="line">&gt;&gt;&gt; b &#x3D; [1, 2, 3]</span><br><span class="line">&gt;&gt;&gt; for i, j in zip(a, b):</span><br><span class="line">...     print(i+j)</span><br><span class="line">...</span><br><span class="line">1</span><br><span class="line">3</span><br><span class="line">5</span><br></pre></td></tr></table></figure>
-<ul>
-<li>先是zip函数将a b压包成为一个可迭代对象</li>
-<li>对可迭代对象的每一个元素进行解包<code>（i, j = (0, 1)）</code>,此时就可以分别调用i j变量进行计算</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; l &#x3D; [(&#39;Bob&#39;, &#39;1990-1-1&#39;, 60),</span><br><span class="line">...     (&#39;Mary&#39;, &#39;1996-1-4&#39;, 50),</span><br><span class="line">...     (&#39;Nancy&#39;, &#39;1993-3-1&#39;, 55),]</span><br><span class="line">&gt;&gt;&gt; for name, *args in l:</span><br><span class="line">...     print(name, args)</span><br><span class="line">...</span><br><span class="line">Bob [&#39;1990-1-1&#39;, 60]</span><br><span class="line">Mary [&#39;1996-1-4&#39;, 50]</span><br><span class="line">Nancy [&#39;1993-3-1&#39;, 55]</span><br></pre></td></tr></table></figure>
-<ul>
-<li><code>*</code>代表多个变量</li>
-</ul>
-<h2><span id="_的用法"><code>_</code>的用法</span></h2><p>当一些元素不用时，用<code>_</code>表示是更好的写法，可以让读代码的人知道这个元素是不要的</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; person &#x3D; (&#39;Bob&#39;, 20, 50, (11, 20, 2000))</span><br><span class="line">&gt;&gt;&gt; name, *_, (*_, year) &#x3D; person</span><br><span class="line">&gt;&gt;&gt; name</span><br><span class="line">&#39;Bob&#39;</span><br><span class="line">&gt;&gt;&gt; year</span><br><span class="line">2000</span><br></pre></td></tr></table></figure>
+<h1><span id="applymap">applymap()</span></h1><p>让方程作用于DataFrame中的每一个元素</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">In [120]: format &#x3D; lambda x: &#39;%.2f&#39; % x</span><br><span class="line"></span><br><span class="line">In [121]: frame.applymap(format)</span><br><span class="line">Out[121]: </span><br><span class="line">            b      d      e</span><br><span class="line">Utah    -0.03   1.08   1.28</span><br><span class="line">Ohio     0.65   0.83  -1.55</span><br><span class="line">Texas    0.51  -0.88   0.20</span><br><span class="line">Oregon  -0.49  -0.48  -0.31</span><br></pre></td></tr></table></figure>
+<h1><span id="map">map()</span></h1><p>将函数作用于一个Series的每一个元素</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">In [122]: frame[&#39;e&#39;].map(format)</span><br><span class="line">Out[122]: </span><br><span class="line">Utah       1.28</span><br><span class="line">Ohio      -1.55</span><br><span class="line">Texas      0.20</span><br><span class="line">Oregon    -0.31</span><br><span class="line">Name: e, dtype: object</span><br></pre></td></tr></table></figure>
 
-<h2><span id="的使用"><code>*</code>的使用</span></h2><h3><span id="用于表示多个数值">用于表示多个数值</span></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; first, *new, last &#x3D; [94, 85, 73, 46]</span><br><span class="line">&gt;&gt;&gt; new</span><br><span class="line">[85, 73]</span><br></pre></td></tr></table></figure>
-<h3><span id="用于表示可变参数">用于表示可变参数</span></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; def myfun(*num):</span><br><span class="line">...     print(num)</span><br><span class="line">...</span><br><span class="line">&gt;&gt;&gt; myfun(1,2,5,6)</span><br><span class="line">(1, 2, 5, 6)</span><br></pre></td></tr></table></figure>
-<p>参数用<code>*num</code>表示，num变量就可以当成元组调用了。<br>其实这个过程相当于<code>*num, = 1,2,5,6</code></p>
-<h3><span id="用于表示关键字参数">用于表示关键字参数</span></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; def myfun(**kw):</span><br><span class="line">...     print(kw)</span><br><span class="line">...</span><br><span class="line">&gt;&gt;&gt; myfun(name &#x3D; &quot;Bob&quot;, age &#x3D; 20, weight &#x3D; 50)</span><br><span class="line">&#123;&#39;weight&#39;: 50, &#39;name&#39;: &#39;Bob&#39;, &#39;age&#39;: 20&#125;</span><br></pre></td></tr></table></figure>
-<p>键值对传入<code>**kw</code>，kw就可以表示相应字典。<br><code>**</code>的用法只在函数定义中使用</p>
-<h2><span id="解包作为参数传到函数中">解包作为参数传到函数中</span></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">def myfun(a, b):</span><br><span class="line">    print(a + b)</span><br><span class="line"></span><br><span class="line"># 列表的解包</span><br><span class="line">&gt;&gt;&gt; n &#x3D; [1, 2]</span><br><span class="line">&gt;&gt;&gt; myfun(*n)</span><br><span class="line">3</span><br><span class="line"># 字典的解包</span><br><span class="line">&gt;&gt;&gt; mydict &#x3D; &#123;&#39;a&#39;:1, &#39;b&#39;: 2&#125;</span><br><span class="line">&gt;&gt;&gt; myfun(**mydict)</span><br><span class="line">3</span><br><span class="line">&gt;&gt;&gt; myfun(*mydict)</span><br><span class="line">ba</span><br><span class="line"></span><br><span class="line">#一个应用</span><br><span class="line">&gt;&gt;&gt; bob &#x3D; &#123;&#39;name&#39;: &#39;Bob&#39;, &#39;age&#39;: 30&#125;</span><br><span class="line">&gt;&gt;&gt; &quot;&#123;name&#125;&#39;s age is &#123;age&#125;&quot;.format(**bob)</span><br><span class="line">&quot;Bob&#39;s age is 30&quot;</span><br></pre></td></tr></table></figure>
-<h2><span id="多返回值函数">多返回值函数</span></h2><p>也涉及解包</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">def myfun(a, b):</span><br><span class="line">    return a + 1, b + 2</span><br><span class="line">&gt;&gt;&gt; m, n &#x3D; myfun(1, 2)</span><br><span class="line">&gt;&gt;&gt; m</span><br><span class="line">2</span><br><span class="line">&gt;&gt;&gt; n</span><br><span class="line">4</span><br><span class="line">&gt;&gt;&gt; p &#x3D; myfun(1, 2)</span><br><span class="line">&gt;&gt;&gt; p</span><br><span class="line">(2, 4)</span><br></pre></td></tr></table></figure>
+
+
+
+
       
 
       
@@ -265,6 +228,10 @@
 			 
         		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Python</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Pandas</a>
         		</li>
       		
 		</ul>
@@ -320,7 +287,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/07/03/Python-%E8%A7%A3%E5%8C%85%E4%B8%8E%E6%89%93%E5%8C%85/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/07/04/Python-apply-applymap-map/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -334,18 +301,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2020/07/03/Hexo%E4%BD%BF%E7%94%A8/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2020/07/04/Python-%E5%B8%B8%E7%94%A8%E5%87%BD%E6%95%B0/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          Hexo使用
+          Python:常用函数
         
       </div>
     </a>
   
   
-    <a href="/2020/06/20/Causal-Bayesian-Network/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Causal Bayesian Network</div>
+    <a href="/2020/07/03/Markdown%E8%AF%AD%E6%B3%95/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Markdown语法</div>
       <i class="icon-circle-right"></i>
     </a>
   

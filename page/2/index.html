@@ -6,18 +6,16 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Python:解包与打包 | Welcome</title>
+  <title>Welcome</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Python: 解包与打包 解包 打包 打包和解包混合 _的用法 *的使用 用于表示多个数值 用于表示可变参数 用于表示关键字参数   解包作为参数传到函数中 多返回值函数       参考链接：https:&#x2F;&#x2F;zhuanlan.zhihu.com&#x2F;p&#x2F;33896402  Python: 解包与打包解包 一个list是一个整体，想把list中每个元素当成一个个个体剥离出来，这个过程就是解包可">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Python:解包与打包">
-<meta property="og:url" content="http://yoursite.com/2020/07/03/Python-%E8%A7%A3%E5%8C%85%E4%B8%8E%E6%89%93%E5%8C%85/index.html">
+  <meta name="description" content="detailed description">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Welcome">
+<meta property="og:url" content="http://yoursite.com/page/2/index.html">
 <meta property="og:site_name" content="Welcome">
-<meta property="og:description" content="Python: 解包与打包 解包 打包 打包和解包混合 _的用法 *的使用 用于表示多个数值 用于表示可变参数 用于表示关键字参数   解包作为参数传到函数中 多返回值函数       参考链接：https:&#x2F;&#x2F;zhuanlan.zhihu.com&#x2F;p&#x2F;33896402  Python: 解包与打包解包 一个list是一个整体，想把list中每个元素当成一个个个体剥离出来，这个过程就是解包可">
-<meta property="article:published_time" content="2020-07-03T07:33:25.000Z">
-<meta property="article:modified_time" content="2020-07-04T03:17:40.627Z">
+<meta property="og:description" content="detailed description">
 <meta property="article:author" content="Kira Zhang">
-<meta property="article:tag" content="Python">
+<meta property="article:tag" content="CS">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="Welcome" type="application/atom+xml">
@@ -158,14 +156,16 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Python-解包与打包" class="article article-type-post " itemscope itemprop="blogPost">
+            
+  
+    <article id="post-Python-解包与打包" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 class="article-title" itemprop="name">
-      Python:解包与打包
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/07/03/Python-%E8%A7%A3%E5%8C%85%E4%B8%8E%E6%89%93%E5%8C%85/">Python:解包与打包</a>
     </h1>
   
 
@@ -202,58 +202,15 @@
 <blockquote>
 <p>参考链接：<a href="https://zhuanlan.zhihu.com/p/33896402" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/33896402</a></p>
 </blockquote>
-<h1><span id="python-解包与打包">Python: 解包与打包</span></h1><h2><span id="解包">解包</span></h2><blockquote>
+<h1 id="Python-解包与打包"><a href="#Python-解包与打包" class="headerlink" title="Python: 解包与打包"></a>Python: 解包与打包</h1><h2 id="解包"><a href="#解包" class="headerlink" title="解包"></a>解包</h2><blockquote>
 <p>一个list是一个整体，想把list中每个元素当成一个个个体剥离出来，这个过程就是解包<br>可迭代对象都可以解包</p>
 </blockquote>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"># 列表</span><br><span class="line">&gt;&gt;&gt; a,b,c &#x3D; [&#39;a&#39;, &#39;b&#39;, &#39;c&#39;]</span><br><span class="line">&gt;&gt;&gt; a</span><br><span class="line">&#39;a&#39;</span><br><span class="line"></span><br><span class="line"># 元组</span><br><span class="line">&gt;&gt;&gt; a,b,c &#x3D; (&#39;a&#39;, &#39;b&#39;, &#39;c&#39;)</span><br><span class="line">&gt;&gt;&gt; a</span><br></pre></td></tr></table></figure>
-<a id="more"></a>
-<h2><span id="打包">打包</span></h2><blockquote>
-<p>打包是解包的逆过程，通过zip函数实现</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; a &#x3D; [&#39;a&#39;, &#39;b&#39;, &#39;c&#39;]</span><br><span class="line">&gt;&gt;&gt; b &#x3D; [1, 2, 3]</span><br><span class="line">&gt;&gt;&gt; for i in zip(a, b):</span><br><span class="line">...     print(i)</span><br><span class="line">...</span><br><span class="line">(&#39;a&#39;, 1)</span><br><span class="line">(&#39;b&#39;, 2)</span><br><span class="line">(&#39;c&#39;, 3)</span><br></pre></td></tr></table></figure>
-<h2><span id="打包和解包混合">打包和解包混合</span></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; a &#x3D; [0, 1, 2]</span><br><span class="line">&gt;&gt;&gt; b &#x3D; [1, 2, 3]</span><br><span class="line">&gt;&gt;&gt; for i, j in zip(a, b):</span><br><span class="line">...     print(i+j)</span><br><span class="line">...</span><br><span class="line">1</span><br><span class="line">3</span><br><span class="line">5</span><br></pre></td></tr></table></figure>
-<ul>
-<li>先是zip函数将a b压包成为一个可迭代对象</li>
-<li>对可迭代对象的每一个元素进行解包<code>（i, j = (0, 1)）</code>,此时就可以分别调用i j变量进行计算</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; l &#x3D; [(&#39;Bob&#39;, &#39;1990-1-1&#39;, 60),</span><br><span class="line">...     (&#39;Mary&#39;, &#39;1996-1-4&#39;, 50),</span><br><span class="line">...     (&#39;Nancy&#39;, &#39;1993-3-1&#39;, 55),]</span><br><span class="line">&gt;&gt;&gt; for name, *args in l:</span><br><span class="line">...     print(name, args)</span><br><span class="line">...</span><br><span class="line">Bob [&#39;1990-1-1&#39;, 60]</span><br><span class="line">Mary [&#39;1996-1-4&#39;, 50]</span><br><span class="line">Nancy [&#39;1993-3-1&#39;, 55]</span><br></pre></td></tr></table></figure>
-<ul>
-<li><code>*</code>代表多个变量</li>
-</ul>
-<h2><span id="_的用法"><code>_</code>的用法</span></h2><p>当一些元素不用时，用<code>_</code>表示是更好的写法，可以让读代码的人知道这个元素是不要的</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; person &#x3D; (&#39;Bob&#39;, 20, 50, (11, 20, 2000))</span><br><span class="line">&gt;&gt;&gt; name, *_, (*_, year) &#x3D; person</span><br><span class="line">&gt;&gt;&gt; name</span><br><span class="line">&#39;Bob&#39;</span><br><span class="line">&gt;&gt;&gt; year</span><br><span class="line">2000</span><br></pre></td></tr></table></figure>
-
-<h2><span id="的使用"><code>*</code>的使用</span></h2><h3><span id="用于表示多个数值">用于表示多个数值</span></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; first, *new, last &#x3D; [94, 85, 73, 46]</span><br><span class="line">&gt;&gt;&gt; new</span><br><span class="line">[85, 73]</span><br></pre></td></tr></table></figure>
-<h3><span id="用于表示可变参数">用于表示可变参数</span></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; def myfun(*num):</span><br><span class="line">...     print(num)</span><br><span class="line">...</span><br><span class="line">&gt;&gt;&gt; myfun(1,2,5,6)</span><br><span class="line">(1, 2, 5, 6)</span><br></pre></td></tr></table></figure>
-<p>参数用<code>*num</code>表示，num变量就可以当成元组调用了。<br>其实这个过程相当于<code>*num, = 1,2,5,6</code></p>
-<h3><span id="用于表示关键字参数">用于表示关键字参数</span></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; def myfun(**kw):</span><br><span class="line">...     print(kw)</span><br><span class="line">...</span><br><span class="line">&gt;&gt;&gt; myfun(name &#x3D; &quot;Bob&quot;, age &#x3D; 20, weight &#x3D; 50)</span><br><span class="line">&#123;&#39;weight&#39;: 50, &#39;name&#39;: &#39;Bob&#39;, &#39;age&#39;: 20&#125;</span><br></pre></td></tr></table></figure>
-<p>键值对传入<code>**kw</code>，kw就可以表示相应字典。<br><code>**</code>的用法只在函数定义中使用</p>
-<h2><span id="解包作为参数传到函数中">解包作为参数传到函数中</span></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">def myfun(a, b):</span><br><span class="line">    print(a + b)</span><br><span class="line"></span><br><span class="line"># 列表的解包</span><br><span class="line">&gt;&gt;&gt; n &#x3D; [1, 2]</span><br><span class="line">&gt;&gt;&gt; myfun(*n)</span><br><span class="line">3</span><br><span class="line"># 字典的解包</span><br><span class="line">&gt;&gt;&gt; mydict &#x3D; &#123;&#39;a&#39;:1, &#39;b&#39;: 2&#125;</span><br><span class="line">&gt;&gt;&gt; myfun(**mydict)</span><br><span class="line">3</span><br><span class="line">&gt;&gt;&gt; myfun(*mydict)</span><br><span class="line">ba</span><br><span class="line"></span><br><span class="line">#一个应用</span><br><span class="line">&gt;&gt;&gt; bob &#x3D; &#123;&#39;name&#39;: &#39;Bob&#39;, &#39;age&#39;: 30&#125;</span><br><span class="line">&gt;&gt;&gt; &quot;&#123;name&#125;&#39;s age is &#123;age&#125;&quot;.format(**bob)</span><br><span class="line">&quot;Bob&#39;s age is 30&quot;</span><br></pre></td></tr></table></figure>
-<h2><span id="多返回值函数">多返回值函数</span></h2><p>也涉及解包</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">def myfun(a, b):</span><br><span class="line">    return a + 1, b + 2</span><br><span class="line">&gt;&gt;&gt; m, n &#x3D; myfun(1, 2)</span><br><span class="line">&gt;&gt;&gt; m</span><br><span class="line">2</span><br><span class="line">&gt;&gt;&gt; n</span><br><span class="line">4</span><br><span class="line">&gt;&gt;&gt; p &#x3D; myfun(1, 2)</span><br><span class="line">&gt;&gt;&gt; p</span><br><span class="line">(2, 4)</span><br></pre></td></tr></table></figure>
+        
+          <a class="article-more-a" href="/2020/07/03/Python-%E8%A7%A3%E5%8C%85%E4%B8%8E%E6%89%93%E5%8C%85/#more">more >></a>
+        
       
 
-      
-        <div class="page-reward">
-          <a href="javascript:;" class="page-reward-btn tooltip-top">
-            <div class="tooltip tooltip-east">
-            <span class="tooltip-item">
-              赏
-            </span>
-            <span class="tooltip-content">
-              <span class="tooltip-text">
-                <span class="tooltip-inner">
-                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
-                  <div class="reward-box">
-                    
-                    
-                  </div>
-                </span>
-              </span>
-            </span>
-          </div>
-          </a>
-        </div>
       
     </div>
     <div class="article-info article-info-index">
@@ -273,84 +230,16 @@
       
 
       
-
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/07/03/Python-%E8%A7%A3%E5%8C%85%E4%B8%8E%E6%89%93%E5%8C%85/">展开全文 >></a>
+        </p>
       
-        
-<div class="share-btn share-icons tooltip-left">
-  <div class="tooltip tooltip-east">
-    <span class="tooltip-item">
-      <a href="javascript:;" class="share-sns share-outer">
-        <i class="icon icon-share"></i>
-      </a>
-    </span>
-    <span class="tooltip-content">
-      <div class="share-wrap">
-        <div class="share-icons">
-          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
-            <i class="icon icon-weibo"></i>
-          </a>
-          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
-            <i class="icon icon-weixin"></i>
-          </a>
-          <a class="qq share-sns" href="javascript:;" data-type="qq">
-            <i class="icon icon-qq"></i>
-          </a>
-          <a class="douban share-sns" href="javascript:;" data-type="douban">
-            <i class="icon icon-douban"></i>
-          </a>
-          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
-            <i class="icon icon-qzone"></i>
-          </a>
-          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
-            <i class="icon icon-facebook"></i>
-          </a>
-          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
-            <i class="icon icon-twitter"></i>
-          </a>
-          <a class="google share-sns" href="javascript:;" data-type="google">
-            <i class="icon icon-google"></i>
-          </a>
-        </div>
-      </div>
-    </span>
-  </div>
-</div>
 
-<div class="page-modal wx-share js-wx-box">
-    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
-    <p>扫一扫，分享到微信</p>
-    <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/07/03/Python-%E8%A7%A3%E5%8C%85%E4%B8%8E%E6%89%93%E5%8C%85/" alt="微信分享二维码">
-    </div>
-</div>
-
-<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
-
-  
-<nav id="article-nav">
-  
-    <a href="/2020/07/03/Hexo%E4%BD%BF%E7%94%A8/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          Hexo使用
-        
-      </div>
-    </a>
-  
-  
-    <a href="/2020/06/20/Causal-Bayesian-Network/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Causal Bayesian Network</div>
-      <i class="icon-circle-right"></i>
-    </a>
-  
-</nav>
-
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -370,14 +259,635 @@
 
 
 
-  
-  
-  
 
   
-
+    <article id="post-Causal-Bayesian-Network" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/06/20/Causal-Bayesian-Network/">Causal Bayesian Network</a>
+    </h1>
   
 
+        
+        <a href="/2020/06/20/Causal-Bayesian-Network/" class="archive-article-date">
+  	<time datetime="2020-06-20T07:04:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-20</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <!-- toc -->
+
+<ul>
+<li><a href="#bayesian-network">Bayesian Network</a><ul>
+<li><a href="#贝叶斯定理">贝叶斯定理</a></li>
+<li><a href="#引入贝叶斯网络的原因">引入贝叶斯网络的原因</a></li>
+<li><a href="#贝叶斯网络解决的问题">贝叶斯网络解决的问题</a></li>
+<li><a href="#贝叶斯网络的相关定义及特性">贝叶斯网络的相关定义及特性</a><ul>
+<li><a href="#markov-parents">Markov parents</a></li>
+<li><a href="#markov-compatibility">Markov Compatibility</a></li>
+<li><a href="#parental-markov-condition">Parental Markov Condition</a></li>
+<li><a href="#ordered-markov-condition">Ordered Markov Condition</a></li>
+<li><a href="#observational-equivalence">Observational Equivalence</a></li>
+<li><a href="#techniques-for-calculation">Techniques for calculation</a></li>
+<li><a href="#independency-in-bn">Independency in BN</a><ul>
+<li><a href="#local-independency">Local Independency</a></li>
+<li><a href="#global-independency">Global Independency</a><ul>
+<li><a href="#三种结构">三种结构</a><ul>
+<li><a href="#head-to-headcommon-evidence">head-to-head(Common Evidence)</a></li>
+<li><a href="#tail-to-tailcommon-causev-structure">tail-to-tail(Common Cause/V structure)</a></li>
+<li><a href="#head-to-tail">head-to-tail</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#d-separation">D-separation</a></li>
+</ul>
+</li>
+<li><a href="#贝叶斯网络的创建">贝叶斯网络的创建</a><ul>
+<li><a href="#生成贝叶斯网络初始顺序的重要性">生成贝叶斯网络初始顺序的重要性</a></li>
+<li><a href="#structure-learning">Structure Learning</a></li>
+<li><a href="#parameter-learning">Parameter learning</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#causal-bayesian-network">Causal Bayesian Network</a><ul>
+<li><a href="#实例">实例</a></li>
+<li><a href="#贝叶斯网络模型在causal-inference时的局限性">贝叶斯网络模型在Causal Inference时的局限性</a><ul>
+<li><a href="#马尔可夫等价类">马尔可夫等价类</a></li>
+</ul>
+</li>
+<li><a href="#the-philosophy-behind-caual-bayesian-networks">The philosophy behind caual Bayesian Networks</a></li>
+<li><a href="#causal-network的优越性">Causal network的优越性</a></li>
+<li><a href="#causal-bayesian-network和bayesian-network区别">Causal Bayesian network和Bayesian network区别</a></li>
+<li><a href="#definition-of-causal-bayesian-network">Definition of causal Bayesian network</a></li>
+<li><a href="#properties-of-causal-bayesian-network">Properties of Causal Bayesian network</a></li>
+<li><a href="#causal-relationship-and-their-stability">Causal relationship and their stability</a></li>
+<li><a href="#一些概念">一些概念</a><ul>
+<li><a href="#markov-blanket">Markov Blanket</a></li>
+<li><a href="#markov-process">Markov Process</a></li>
+<li><a href="#do操作符">do操作符</a></li>
+</ul>
+</li>
+<li><a href="#backdoor-criteria">Backdoor Criteria</a><ul>
+<li><a href="#什么是存在干扰">什么是存在干扰</a></li>
+<li><a href="#引入backdoor-criteria的原因">引入Backdoor Criteria的原因</a></li>
+<li><a href="#backdoor-path">Backdoor Path</a><ul>
+<li><a href="#两种backdoor-path结构">两种backdoor path结构</a></li>
+<li><a href="#unblocked-path-blocked-path">unblocked path / blocked path</a></li>
+<li><a href="#berksons-paradox">Berkson’s paradox</a></li>
+</ul>
+</li>
+<li><a href="#definition-of-backdoor-criterion">Definition of Backdoor criterion</a></li>
+<li><a href="#backdoor-criterion-and-ignorability">Backdoor criterion and Ignorability</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<!-- tocstop -->
+
+<h1><span id="bayesian-network">Bayesian Network</span></h1><h2><span id="贝叶斯定理">贝叶斯定理</span></h2><p><img src="http://hellofromkira.oss-cn-beijing.aliyuncs.com/2020/06/21/15926372422123.jpg?x-oss-process=image/auto-orient,1/quality,q_90" alt="-w447"></p>
+<p><img src="http://hellofromkira.oss-cn-beijing.aliyuncs.com/2020/06/21/15926406771156.jpg?x-oss-process=image/auto-orient,1/quality,q_90" alt="-w636"><br>参考链接：<a href="https://www.zhihu.com/question/19725590/answer/217025594" target="_blank" rel="noopener">https://www.zhihu.com/question/19725590/answer/217025594</a></p>
+<h2><span id="引入贝叶斯网络的原因">引入贝叶斯网络的原因</span></h2><p>参考链接：<a href="https://zhuanlan.zhihu.com/p/33860572" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/33860572</a></p>
+<blockquote>
+<p>用于简化随机变量的联合概率分布的表现</p>
+</blockquote>
+<p><img src="http://hellofromkira.oss-cn-beijing.aliyuncs.com/2020/06/21/15926377253815.jpg?x-oss-process=image/auto-orient,1/quality,q_90" alt="-w441"></p>
+<p>贝叶斯网络（以及其他所有的概率图模型）相比于原始的联合分布模型，最大的优势在于增加了变量之间条件独立的先验信息，从而<strong>减小了模型的体积</strong>，与模型进行推断、学习的时间。例如，上图共有5个变量，如果用朴素的联合分布模型建模，条件概率表格的体积将会是 48 ，而采用贝叶斯网络后，条件概率表格的总体积为17 。</p>
+<h2><span id="贝叶斯网络解决的问题">贝叶斯网络解决的问题</span></h2><ol>
+<li>条件概率</li>
+<li>最大后验概率</li>
+</ol>
+<h2><span id="贝叶斯网络的相关定义及特性">贝叶斯网络的相关定义及特性</span></h2><p>参考：Causality——Judea Pearl 2nd edition</p>
+<h3><span id="markov-parents">Markov parents</span></h3><ol>
+<li><p>定义：</p>
+<p><img src="http://hellofromkira.oss-cn-beijing.aliyuncs.com/2020/06/21/15926378362656.jpg?x-oss-process=image/auto-orient,1/quality,q_90" alt="-w554"></p>
+<ul>
+<li>即$PAi$是将$Xi$与其predecessor隔开的一组变量</li>
+</ul>
+</li>
+<li><p>推论：DAG是贝叶斯网络的必要条件有：</p>
+<ol>
+<li><img src="http://hellofromkira.oss-cn-beijing.aliyuncs.com/2020/06/21/15926379743242.jpg?x-oss-process=image/auto-orient,1/quality,q_90" alt="-w388"><ul>
+<li>即每一个节点的概率只受其父节点的约束</li>
+</ul>
+</li>
+</ol>
+</li>
+</ol>
+<h3><span id="markov-compatibility">Markov Compatibility</span></h3><blockquote>
+<p> If a probability function $P$ admits the factorization of (1.33) relative to DAG $G$, we say that $G$ represents $P$, that $G$ and $P$ are compatible, or that <strong>$P$ is Markov relative to $G$</strong>.</p>
+</blockquote>
+<ul>
+<li>通过知道所有变量的conditional independency，就描绘与G compatible的概率分布</li>
+</ul>
+<blockquote>
+<p>A convenient way of characterizing the set o f distributions compatible with a DAG G is to <strong>list the set of (conditional) independencies that each such distribution must sat­isfy</strong>. These independencies can be read off the DAG by using a graphical criterion called <strong>d-separation</strong></p>
+</blockquote>
+<h3><span id="parental-markov-condition">Parental Markov Condition</span></h3><ol>
+<li>定义<ul>
+<li><img src="http://hellofromkira.oss-cn-beijing.aliyuncs.com/2020/06/21/15926679316940.jpg?x-oss-process=image/auto-orient,1/quality,q_90" alt="-w446"></li>
+</ul>
+</li>
+</ol>
+<h3><span id="ordered-markov-condition">Ordered Markov Condition</span></h3><ol>
+<li>定义<ul>
+<li><img src="http://hellofromkira.oss-cn-beijing.aliyuncs.com/2020/06/21/15926683169335.jpg?x-oss-process=image/auto-orient,1/quality,q_90" alt="-w451"></li>
+</ul>
+</li>
+<li>A consequence of this theorem is <strong>an order-independent criterion</strong>  for determining whether a given probability P is Markov relative to a given DAG G.<ul>
+<li>order-independent：由于同一张联合分布概率表可能对应多张贝叶斯图，某一个节点的predecessor排列也有多种，无论predecessor的排列如何都，该节点都与所有的predecessor节点独立</li>
+</ul>
+</li>
+</ol>
+<h3><span id="observational-equivalence">Observational Equivalence</span></h3><ol>
+<li>定义<ul>
+<li><img src="http://hellofromkira.oss-cn-beijing.aliyuncs.com/2020/06/21/15926700374377.jpg?x-oss-process=image/auto-orient,1/quality,q_90" alt="-w449"></li>
+</ul>
+</li>
+<li>Two networks that are <strong>observationally equivalent</strong> cannot be distinguished <strong>without resorting to manipulative experimentation</strong> or temporal information<ol>
+<li><img src="http://hellofromkira.oss-cn-beijing.aliyuncs.com/2020/06/21/15926700806785.jpg?x-oss-process=image/auto-orient,1/quality,q_90" alt="-w384"><ul>
+<li>X3:Sprinkler,X2:Rain</li>
+</ul>
+</li>
+<li>将X1，X2中间的箭头逆转，不会破坏原有的V-structure/引入新的V-structure；因此X2/X1中箭头两个方向是observational equivalent。因此，X1和X2之间箭头的方向不能由probabilistic info得出</li>
+<li>若对X2-X4箭头方向调整，则会破坏一个原有的V结构，X4-X5之间箭头方向调整，则会产生一个新的V结构</li>
+</ol>
+</li>
+</ol>
+<blockquote>
+<p>Thus, we see that some probability functions P (such as the one responsi­ ble for the construction of the Bayesian network in above pic), when unaccompanied by temporal information，can <strong>constrain the directionality of some arrows in the graph</strong>.</p>
+</blockquote>
+<h3><span id="techniques-for-calculation">Techniques for calculation</span></h3><ol>
+<li>Message-passing architecture and Tree structure<ul>
+<li>join-tree propagation:  decompose the network into clusters then form tree structure, each clusters is a compound variable that is capable of passing mes­sages to its neighbors<ul>
+<li><img src="http://hellofromkira.oss-cn-beijing.aliyuncs.com/2020/06/21/15926702453659.jpg?x-oss-process=image/auto-orient,1/quality,q_90" alt="-w345"></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Cut-set conditioning method</strong>(不太理解)<ul>
+<li>a set of variables is instantiated (given specific values) such that the remaining network forms a tree.The propagation is then performed on that tree, and a new instantiation chosen, until all instantiations have been exhausted; <strong>the results are then averaged</strong></li>
+</ul>
+</li>
+</ol>
+<h3><span id="independency-in-bn">Independency in BN</span></h3><p><strong>如何判断a与b的independency</strong>: 假如a发生变化，a变化的影响是否会传达到b</p>
+<h4><span id="local-independency">Local Independency</span></h4><blockquote>
+<p> Any variable in the network is independent of its non-descendents given its parents.<br>$$ (X \perp NonDesc(X) | Pa(X) $$where $ NonDesc(X) $ is the set of variables which are not descendents of $ X $ and $ Pa(X) $ is the set of variables which are parents of $ X $.</p>
+</blockquote>
+<h4><span id="global-independency">Global Independency</span></h4><h5><span id="三种结构">三种结构</span></h5><p>参考链接：<a href="https://zhuanlan.zhihu.com/p/30139208" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/30139208</a></p>
+<h6><span id="head-to-headcommon-evidence">head-to-head(Common Evidence)</span></h6><p><img src="http://hellofromkira.oss-cn-beijing.aliyuncs.com/2020/06/21/15926386359550.jpg?x-oss-process=image/auto-orient,1/quality,q_90" alt="-w248"></p>
+<ol>
+<li>c已知<ul>
+<li>a产生变化，c不变，那么b也要发生变化，因此a、b不独立</li>
+<li>有：<ul>
+<li>P(a,b|c)= P(a,b,c)/P(c)=P(a)P(b)P(c|a,b)/P(c)</li>
+<li>无法得到P(a,b|c)=P(a|c)P(b|c)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>c未知<ul>
+<li>a、b被阻断（blocked），条件独立</li>
+<li><img src="http://hellofromkira.oss-cn-beijing.aliyuncs.com/2020/06/21/15926387353186.jpg?x-oss-process=image/auto-orient,1/quality,q_90" alt="-w356"></li>
+</ul>
+</li>
+</ol>
+<h6><span id="tail-to-tailcommon-causev-structure">tail-to-tail(Common Cause/V structure)</span></h6><p><img src="http://hellofromkira.oss-cn-beijing.aliyuncs.com/2020/06/21/15926389037966.jpg?x-oss-process=image/auto-orient,1/quality,q_90" alt="-w247"></p>
+<ol>
+<li>c已知<ul>
+<li>有：<ul>
+<li>P(a,b,c)=P(c)<em>P(a|c)</em>P(b|c)</li>
+<li>P(a,b|c)=P(a|c)P(b|c)</li>
+</ul>
+</li>
+<li>a/b仅取决于c，a⊥b｜c</li>
+</ul>
+</li>
+<li>c未知<ul>
+<li>无法得出P(a,b) = P(a)P(b)，即c未知时，a、b不独立。</li>
+</ul>
+</li>
+</ol>
+<h6><span id="head-to-tail">head-to-tail</span></h6><p><img src="http://hellofromkira.oss-cn-beijing.aliyuncs.com/2020/06/21/15926391726520.jpg?x-oss-process=image/auto-orient,1/quality,q_90" alt="-w302"></p>
+<ol>
+<li>c已知<ul>
+<li>a的变化不会影响c，c的变化会影响b，因此a⊥b｜c</li>
+</ul>
+</li>
+<li>c未知<ul>
+<li>The influence flows from $ A $ to $ B $ when $ C $ is not observed</li>
+<li>有：<ul>
+<li>P(a,b,c)=P(a)<em>P(c|a)</em>P(b|c)</li>
+<li>但无法推出P(a,b) = P(a)P(b)</li>
+<li>即c未知时，a、b不独立。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>xi+1的分布状态只和xi有关，和其他变量条件独立，这种顺次演变的随机过程，就叫做<strong>马尔科夫链（Markov chain）</strong></li>
+</ol>
+<h3><span id="d-separation">D-separation</span></h3><p>为了回答<strong>给定一个随机变量的集合Z，随机变量A与B之间是否条件独立</strong>这个问题，我们需要引入d分隔的概念</p>
+<ul>
+<li><p>A、B间存在d分隔：某个节点集合C能d分隔节点A与节点B，当且仅当：给定C时，A与B之间<strong>不存在有效路径（active path/active trail）</strong>，即A、B被C隔断（blocked），A、B条件独立。</p>
+<ul>
+<li>Active Trail: 若A的变化可以影响B，则A和B中存在active trail </li>
+</ul>
+</li>
+<li><p>A、B间存在d联结：不存在d分隔</p>
+</li>
+<li><p>例子：</p>
+<p>  <img src="http://hellofromkira.oss-cn-beijing.aliyuncs.com/2020/06/21/15926396060892.jpg?x-oss-process=image/auto-orient,1/quality,q_90" alt="-w423"></p>
+</li>
+</ul>
+<p>《Causality》中是这样定义的：<br><img src="http://hellofromkira.oss-cn-beijing.aliyuncs.com/2020/06/21/15926680828518.jpg?x-oss-process=image/auto-orient,1/quality,q_90" alt="-w445"><br>例子：<br><img src="http://hellofromkira.oss-cn-beijing.aliyuncs.com/2020/06/21/15926681044665.jpg?x-oss-process=image/auto-orient,1/quality,q_90" alt="-w397"></p>
+<ul>
+<li>粉色标记处：collider的子节点已知会使collider所在的path unlocked，即此时X会影响Y</li>
+</ul>
+<h2><span id="贝叶斯网络的创建">贝叶斯网络的创建</span></h2><h3><span id="生成贝叶斯网络初始顺序的重要性">生成贝叶斯网络初始顺序的重要性</span></h3><ul>
+<li>在构建贝叶斯网络的时候，会收到变量初始状态的影响<br><img src="http://hellofromkira.oss-cn-beijing.aliyuncs.com/2020/06/21/15926695528684.jpg?x-oss-process=image/auto-orient,1/quality,q_90" alt="-w457"></li>
+</ul>
+<h3><span id="structure-learning">Structure Learning</span></h3><ol>
+<li><p>定义：</p>
+<blockquote>
+<p>The task of structure learning for Bayesian networks refers to <strong>learn the structure</strong> of the directed acyclic graph (DAG) <strong>from data</strong></p>
+</blockquote>
+</li>
+<li><p>两种方式：</p>
+<ul>
+<li>score-based approach </li>
+<li>constraint-based approach </li>
+</ul>
+</li>
+</ol>
+<h3><span id="parameter-learning">Parameter learning</span></h3><ol>
+<li><p>定义 </p>
+<blockquote>
+<p>Parameter learning is the process of using data to <strong>learn the distributions</strong> of a Bayesian network or Dynamic Bayesian network.</p>
+</blockquote>
+<ul>
+<li>Dynamic Bayesian network: 变量的概率分布会随时间发生变化<ul>
+<li><img src="http://hellofromkira.oss-cn-beijing.aliyuncs.com/2020/06/21/15926401957668.jpg?x-oss-process=image/auto-orient,1/quality,q_90" alt="-w463"></li>
+</ul>
+</li>
+<li>在贝叶斯参数学习里，认为模型的参数不是一个确定的值，而是一个随机变量，且满足一定的分布。<strong>贝叶斯参数学习的过程就是根据已知的数据集D来估计参数的概率分布，再用得到的参数概率分布来计算随机变量X的后验概率分布</strong>。</li>
+</ul>
+</li>
+<li><p>complete data的方法</p>
+<ol>
+<li>极大似然估计MLE<ul>
+<li>概率是通过参数，推测事实；似然是根据事实，推测参数</li>
+<li>通过不断优化参数，使得一个事件发生的概率尽可能大Maximize{P((x1,x2,x3….)|参数)}<ul>
+<li><img src="http://hellofromkira.oss-cn-beijing.aliyuncs.com/2020/06/21/15926405152667.jpg?x-oss-process=image/auto-orient,1/quality,q_90" alt="-w284"></li>
+<li>为什么能变成连乘：因为MLE的独立同分布假设</li>
+</ul>
+</li>
+<li>参考链接：<ul>
+<li><a href="https://www.zhihu.com/question/24124998" target="_blank" rel="noopener">https://www.zhihu.com/question/24124998</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/26614750" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/26614750</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>贝叶斯估计<ul>
+<li>参考链接：<a href="https://zhuanlan.zhihu.com/p/61593112" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/61593112</a><ul>
+<li><img src="http://hellofromkira.oss-cn-beijing.aliyuncs.com/2020/06/21/15926409339661.jpg?x-oss-process=image/auto-orient,1/quality,q_90" alt="-w511"><ul>
+<li>通常我们取后验分布的期望作为参数的估计值</li>
+</ul>
+</li>
+<li>最大后验估计MAP：<ul>
+<li>参考链接：<a href="https://zhuanlan.zhihu.com/p/61593112" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/61593112</a></li>
+<li><img src="http://hellofromkira.oss-cn-beijing.aliyuncs.com/2020/06/21/15926410276275.jpg?x-oss-process=image/auto-orient,1/quality,q_90" alt="-w717"></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+</li>
+<li><p>incomplete data的方法</p>
+<ol>
+<li>Expectation-Maximization algorithm</li>
+<li>Robust Bayesian estimate</li>
+<li>Monte-Carlo Method</li>
+<li>Gaussian approximation method</li>
+</ol>
+</li>
+</ol>
+<h1><span id="causal-bayesian-network">Causal Bayesian Network</span></h1><h2><span id="实例">实例</span></h2><p>肺癌分析实例： <a href="http://www.causality.inf.ethz.ch//data/LUCAS.html" target="_blank" rel="noopener">http://www.causality.inf.ethz.ch//data/LUCAS.html</a></p>
+<h2><span id="贝叶斯网络模型在causal-inference时的局限性">贝叶斯网络模型在Causal Inference时的局限性</span></h2><p>局限性：贝叶斯网络本身<strong>无法区分出因果的方向</strong>。例如，A←B←C与A→B→C的因果方向完全相反，但在贝叶斯网络的模型描述下，它们<strong>表达的概率分布和条件独立假设完全相同</strong>。</p>
+<ul>
+<li>贝叶斯网络中，A→B未必等同于A导致B</li>
+<li>概率论「给定/已知随机变量Z」里的「给定/已知」<strong>只能用于表达观察，而非介入</strong>（介入即产生激励/影响）。<ul>
+<li>参考“介入主义因果观”，简而言之就是因是激励，果是响应</li>
+<li><strong>因果关系是不可逆/非对称的，但是相关性是可逆/对称的</strong></li>
+</ul>
+</li>
+</ul>
+<h3><span id="马尔可夫等价类">马尔可夫等价类</span></h3><p><img src="http://hellofromkira.oss-cn-beijing.aliyuncs.com/2020/06/21/15926397039859.jpg?x-oss-process=image/auto-orient,1/quality,q_90" alt="-w441"></p>
+<h2><span id="the-philosophy-behind-caual-bayesian-networks">The philosophy behind caual Bayesian Networks</span></h2><blockquote>
+<p>It seems that if conditional independence judgments are byproducts of stored causal relationships, then tapping and representing those relationships directly would be a more natural and more reliable way of expressing what we know or believe about the world. </p>
+</blockquote>
+<h2><span id="causal-network的优越性">Causal network的优越性</span></h2><ol>
+<li>causal mod­els (assuming they are valid) are much more <strong>informative</strong> than probability models.<ol>
+<li>A joint distribution tells us how probable events are and how probabilities would change with subsequent observations, but a causal model also tells us how these probabilities would change as a result of external interventions   </li>
+</ol>
+</li>
+<li>模块性<ol>
+<li>由于 parent-child 之间的稳定以及自治的物理机制. 在不改变其他变量之间分布的情况下, 单独改变一个 parent-child 之间的分布是有可能的 ( conceivable ) </li>
+</ol>
+</li>
+</ol>
+<h2><span id="causal-bayesian-network和bayesian-network区别">Causal Bayesian network和Bayesian network区别</span></h2><ol>
+<li><strong>CBN中的操作是do/intervene，BN中的操作是observe，do可以得出直接因果关系，observe只能得出相关性</strong></li>
+</ol>
+<p><img src="http://hellofromkira.oss-cn-beijing.aliyuncs.com/2020/06/21/15926708137133.jpg?x-oss-process=image/auto-orient,1/quality,q_90" alt="-w451"></p>
+<h2><span id="definition-of-causal-bayesian-network">Definition of causal Bayesian network</span></h2><p>P($v$)是集合V上的概率分布<br>P$x$($v$)是定义在intervention do(X=$x$)上的概率分布<br><img src="http://hellofromkira.oss-cn-beijing.aliyuncs.com/2020/06/21/15926708906062.jpg?x-oss-process=image/auto-orient,1/quality,q_90" alt="-w441"></p>
+<ol>
+<li>因果贝叶斯网络应该符合概率图模型的标准</li>
+<li>对于干涉的部分，P(do(X=$x$))=1</li>
+<li>被干涉变量的父节点的概率分布是不变的。（并且注意的一点:这里讲干涉的分布形式成功转换为了正常的概率分布形式）</li>
+</ol>
+<h2><span id="properties-of-causal-bayesian-network">Properties of Causal Bayesian network</span></h2><p><img src="http://hellofromkira.oss-cn-beijing.aliyuncs.com/2020/06/21/15926711948178.jpg?x-oss-process=image/auto-orient,1/quality,q_90" alt="-w459"></p>
+<ul>
+<li>truncated factorization：justify the deletion procedure<ul>
+<li>deletion：在causal network中，do(X)相当于把X与其predecessor全部断开</li>
+</ul>
+</li>
+</ul>
+<p><img src="http://hellofromkira.oss-cn-beijing.aliyuncs.com/2020/06/21/15926710523759.jpg?x-oss-process=image/auto-orient,1/quality,q_90" alt="-w433"></p>
+<ul>
+<li>保证observe的condition probability和do操作的一致</li>
+<li>为什么要一致呢？？</li>
+</ul>
+<p><img src="http://hellofromkira.oss-cn-beijing.aliyuncs.com/2020/06/21/15926710877480.jpg?x-oss-process=image/auto-orient,1/quality,q_90" alt="-w450"></p>
+<ul>
+<li>控制了$Vi$的直接原因$PAi$（一组令Vi independent of its predecessor的变量）,那么剩下的变量就不会影响$Vi$的概率分布</li>
+<li>只有$Vi$的descendants的概率分布会受到do操作的影响</li>
+</ul>
+<h2><span id="causal-relationship-and-their-stability">Causal relationship and their stability</span></h2><ol>
+<li>为了检验$Xi$对$Xj$是否有causal influence，进行操作do(X=$Xi$)<ul>
+<li>只有$Xi$的descendant会受到intervention的影响</li>
+<li>计算P$xi$($Xj$), 看$Xj$的分布是否发生了变化，若发生了变化则说明$Xi$对$Xj$有causal influence</li>
+</ul>
+</li>
+<li>causal relationship的稳定性<ul>
+<li>因果关系是 ontological (存在论) 的, 即真实的因果关系不会根据环境(do-operator)的变化而变化. 即使我们队知识的认识(概率分布)发生了变化</li>
+<li>概率关系是 epistemic (认识论) 的, 我们对事物的认识(概率分布)会随着环境的变化(do-operator)而变化</li>
+</ul>
+</li>
+</ol>
+<h2><span id="一些概念">一些概念</span></h2><h3><span id="markov-blanket">Markov Blanket</span></h3><ol>
+<li>MB包括：all parents, children, and spouses of the target（X）</li>
+<li>一个节点的MB：contains all the variables that shield the node from the rest of the network.</li>
+<li>MB is the only knowledge needed to predict the behavior of that node and its children</li>
+<li>例子：<img src="http://hellofromkira.oss-cn-beijing.aliyuncs.com/2020/06/21/15926418193843.jpg?x-oss-process=image/auto-orient,1/quality,q_90" alt="-w835"></li>
+</ol>
+<h3><span id="markov-process">Markov Process</span></h3><blockquote>
+<p>a random process in which the future is independent of the past, given the present</p>
+</blockquote>
+<h3><span id="do操作符">do操作符</span></h3><p>do(X),相当于令x已知，将x与所有指向x的点断开</p>
+<h2><span id="backdoor-criteria">Backdoor Criteria</span></h2><h3><span id="什么是存在干扰">什么是存在干扰</span></h3><p><img src="http://hellofromkira.oss-cn-beijing.aliyuncs.com/2020/06/21/15926653674927.jpg?x-oss-process=image/auto-orient,1/quality,q_90" alt="-w458"></p>
+<h3><span id="引入backdoor-criteria的原因">引入Backdoor Criteria的原因</span></h3><ul>
+<li>为了便于在实验的时候选择控制变量，确定对哪些变量进行intervene<ul>
+<li>在causal inference时，控制变量就是confounder（混淆变量）</li>
+</ul>
+</li>
+<li>参考链接：<a href="https://blog.csdn.net/s1314_JHC/article/details/80790112" target="_blank" rel="noopener">https://blog.csdn.net/s1314_JHC/article/details/80790112</a><ul>
+<li><img src="http://hellofromkira.oss-cn-beijing.aliyuncs.com/2020/06/21/15926656785543.jpg?x-oss-process=image/auto-orient,1/quality,q_90" alt="-w720"></li>
+</ul>
+</li>
+</ul>
+<h3><span id="backdoor-path">Backdoor Path</span></h3><blockquote>
+<p> $A$’s backdoor path is a <strong>non-causal path from $A$ to $Y$</strong>. They are “backdoor” paths because they flow backwards out of A: all of these paths point into A.</p>
+</blockquote>
+<ul>
+<li>删除所有以A为起点的path(frontdoor path)后，保留的就是backdoor path</li>
+<li>backdoor path里存在confounder</li>
+</ul>
+<h4><span id="两种backdoor-path结构">两种backdoor path结构</span></h4><ol>
+<li>Common Causes<ul>
+<li><img src="http://hellofromkira.oss-cn-beijing.aliyuncs.com/2020/06/21/15926659776902.jpg?x-oss-process=image/auto-orient,1/quality,q_90" alt="-w247"></li>
+<li>A是treatment，Y是outcome，X是confounder<ul>
+<li>由于混淆表量confounder的存在，导致A-&gt;Y的因果关系受到影响   </li>
+</ul>
+</li>
+</ul>
+</li>
+<li>M-bias<blockquote>
+<p>This structure is typically used to represent a circumstance where a researcher <strong>observes T,Y,M(U,W unobserved)</strong></p>
+<p>Clearly, <strong>the causal effect of T on Y is 0</strong> , which is also equal to the marginal association between T and Y</p>
+<p>In order to test whether M is a confounder, one would ‘adjust M’, eg: including M in a regression or by matching units on similar values of M. Then the causal expectation between T &amp; Y is not 0. <strong>So M is a confounder</strong></p>
+</blockquote>
+</li>
+</ol>
+<ul>
+<li><img src="http://hellofromkira.oss-cn-beijing.aliyuncs.com/2020/06/21/15926662438389.jpg?x-oss-process=image/auto-orient,1/quality,q_90" alt="-w313"></li>
+</ul>
+<h4><span id="unblocked-path-blocked-path">unblocked path / blocked path</span></h4><p><img src="http://hellofromkira.oss-cn-beijing.aliyuncs.com/2020/06/21/15926666744310.jpg?x-oss-process=image/auto-orient,1/quality,q_90" alt="-w169"></p>
+<ol>
+<li>存在unblocked backdoor path，x未知，A和Y条件不独立，A和Y有两种关系<ul>
+<li>$A$直接导致了$Y$(直接因果关系)</li>
+<li>通过backdoor path，$A$对$Y$施加了影响</li>
+</ul>
+</li>
+<li>存在blocked backdoor path，有两种情况<ol>
+<li>control for or stratify a non-collider on that path,<ul>
+<li>即已知X，A与Y条件独立</li>
+</ul>
+</li>
+<li>backdoor path上存在collider，则这条路必blocked<br>  <img src="http://hellofromkira.oss-cn-beijing.aliyuncs.com/2020/06/21/15926669276786.jpg?x-oss-process=image/auto-orient,1/quality,q_90" alt="-w332"><ol>
+<li>collider blocks the association between the variables that influence it.</li>
+<li><strong>Condition on the collider opens the path between $X$ and $Y$,cause “Berkson’s paradox”</strong></li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+<h4><span id="berksons-paradox">Berkson’s paradox</span></h4><ol>
+<li><p>现象</p>
+<blockquote>
+<p>two values can statistically be negatively correlated even when they appear positively correlated in the population.</p>
+</blockquote>
+</li>
+<li><p>产生原因</p>
+<blockquote>
+<p>caused by systematically observing some events more than others. If you know that X+Y must be within a certain range, then having a high X results in a lower Y, and vice versa.</p>
+</blockquote>
+<ul>
+<li>X+Y 已知相当于上述的collider已知</li>
+</ul>
+</li>
+<li><p>与confounder不一样！！confounder是在研究因果关系时的控制变量；而berkson paradox仅是一个现象</p>
+</li>
+</ol>
+<h3><span id="definition-of-backdoor-criterion">Definition of Backdoor criterion</span></h3><blockquote>
+<p>An effect of A on Y is identifiable if either:</p>
+<ol>
+<li>No backdoor paths from A to Y</li>
+<li>Measured covariates are sufficient to block all backdoor paths from A to Y</li>
+</ol>
+<p>Backdoor criterion is powerful because it can check:</p>
+<ol>
+<li>if there is confounding given this DAG </li>
+<li>if it is possible to removing the confounding</li>
+<li>what variables to condition on to eliminate the confounding</li>
+</ol>
+</blockquote>
+<ul>
+<li>简而言之，backdoor criterion用于检测A到Y是否有直接的因果关系</li>
+<li>借助backdoor criterion可以给已知DAG消歧，确定唯一的因果关系</li>
+</ul>
+<h3><span id="backdoor-criterion-and-ignorability">Backdoor criterion and Ignorability</span></h3><blockquote>
+<p> Ignorability Assumption:</p>
+<ul>
+<li>no unmeasured confounders</li>
+<li>no unblockable backdoor paths</li>
+</ul>
+<p>Suppose that we use the backdoor criterion and find that a set of variables X blocks all the backdoor paths. This implies the treatment assignment is conditionally <strong>ignorable</strong>: Y (a) ⫫A|X.</p>
+</blockquote>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Causal Inference</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/06/20/Causal-Bayesian-Network/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-hello-world" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/06/19/hello-world/">Hello World</a>
+    </h1>
+  
+
+        
+        <a href="/2020/06/19/hello-world/" class="archive-article-date">
+  	<time datetime="2020-06-19T14:07:24.409Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-19</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
+<h2><span id="quick-start">Quick Start</span></h2><h3><span id="create-a-new-post">Create a new post</span></h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
+<h3><span id="run-server">Run server</span></h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
+<h3><span id="generate-static-files">Generate static files</span></h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
+<h3><span id="deploy-to-remote-sites">Deploy to remote sites</span></h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/06/19/hello-world/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+  
+    <nav id="page-nav">
+      <a class="extend prev" rel="prev" href="/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
+    </nav>
   
 
 
@@ -400,8 +910,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: false,
-		isPost: true,
+		isHome: true,
+		isPost: false,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
